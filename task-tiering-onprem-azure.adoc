@@ -4,7 +4,7 @@ permalink: task-tiering-onprem-azure.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, azure, blob, azure blob 
 summary: 非アクティブなデータを Azure Blob ストレージに階層化することで、オンプレミスのONTAPクラスターの領域を解放します。 
 ---
-= NetApp Cloud Tiering でオンプレミスのONTAPクラスターから Azure Blob ストレージにデータを階層化します
+= NetApp Cloud TieringでオンプレミスのONTAPクラスターから Azure Blob ストレージにデータを階層化します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -27,14 +27,14 @@ summary: 非アクティブなデータを Azure Blob ストレージに階層�
 次のものが必要です:
 
 [role="quick-margin-list"]
-* NetAppコンソールに追加したONTAP 9.4 以降を実行しているソースのオンプレミスONTAPクラスターと、Azure Blob ストレージへの HTTPS 接続。 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+* NetApp Consoleに追加したONTAP 9.4 以降を実行しているソースのオンプレミスONTAPクラスターと、Azure Blob ストレージへの HTTPS 接続。 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
 * Azure VNet またはオンプレミスにインストールされたコンソール エージェント。
 * データセンター内のONTAPクラスター、Azure ストレージ、および Cloud Tiering サービスへの送信 HTTPS 接続を有効にするエージェントのネットワーク。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]階層化を設定する
 [role="quick-margin-para"]
-NetAppコンソールで、オンプレミスのONTAPシステムを選択し、階層化サービスに対して *有効* を選択して、プロンプトに従ってデータを Azure Blob ストレージに階層化します。
+NetApp Consoleで、オンプレミスのONTAPシステムを選択し、階層化サービスに対して *有効* を選択して、プロンプトに従ってデータを Azure Blob ストレージに階層化します。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三つ"]ライセンスの設定
 [role="quick-margin-para"]
@@ -42,7 +42,7 @@ NetAppコンソールで、オンプレミスのONTAPシステムを選択し、
 
 [role="quick-margin-list"]
 * Azure Marketplaceからサブスクライブするには、 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["マーケットプレイスオファーにアクセス"^]をクリックし、「*購読*」を選択して、指示に従います。
-* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetAppコンソールに追加する"] 。
+* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetApp Consoleに追加する"] 。
 
 
 
@@ -104,9 +104,9 @@ NOTE: Cloud Tiering は、 ONTAP 9.5 以降、 FlexGroupボリュームをサポ
 
 === ONTAPクラスタの検出
 
-コールド データの階層化を開始する前に、オンプレミスのONTAPシステムをNetAppコンソールに追加する必要があります。
+コールド データの階層化を開始する前に、オンプレミスのONTAPシステムをNetApp Consoleに追加する必要があります。
 
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^]。
 
 
 
@@ -166,7 +166,7 @@ NOTE: 一定の日数後に階層化されたデータが移行される低コ�
 Azure 環境を準備したら、最初のクラスターから非アクティブなデータの階層化を開始します。
 
 .要件
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["オンプレミスのONTAPシステムからNetAppコンソールへ"^] 。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["オンプレミスのONTAPシステムからNetApp Consoleへ"^]。
 
 .手順
 . オンプレミスのONTAPシステムを選択します。
@@ -226,7 +226,7 @@ image:screenshot_tiering_initial_volumes.png["単一のボリューム、複数�
 
 . [_階層化ポリシー_] ダイアログで、階層化ポリシーを選択し、必要に応じて選択したボリュームの冷却日数を調整して、[適用] を選択します。
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"] 。
+link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"]。
 
 +
 image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化ポリシー設定を示すスクリーンショット。"]
@@ -237,7 +237,7 @@ image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化�
 クラスター上のボリュームから Azure Blob オブジェクト ストレージへのデータ階層化が正常に設定されました。
 
 .次の手順
-link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"] 。
+link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"]。
 
 クラスター上のアクティブなデータと非アクティブなデータに関する情報を確認できます。link:task-managing-tiering.html["階層設定の管理について詳しくは"] 。
 

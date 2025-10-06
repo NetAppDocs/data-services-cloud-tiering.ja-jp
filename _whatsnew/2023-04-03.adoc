@@ -6,7 +6,7 @@
 
 === ライセンスタブが削除されました
 
-ライセンス タブは、クラウド階層化インターフェースから削除されました。従量課金制 (PAYGO) サブスクリプションのすべてのライセンスは、現在、Cloud Tiering On-Premises ダッシュボードからアクセスできます。このページにはBlueXP digital walletへのリンクもあり、Cloud Tiering の BYOL (個人所有ライセンス) を表示および管理できます。
+ライセンス タブは、クラウド階層化インターフェースから削除されました。 Pay-as-you-go (PAYGO) サブスクリプションのすべてのライセンスは、現在、Cloud Tiering On-Premises ダッシュボードからアクセスできます。このページにはBlueXP digital walletへのリンクもあり、Cloud Tiering の BYOL (個人所有ライセンス) を表示および管理できます。
 
 
 

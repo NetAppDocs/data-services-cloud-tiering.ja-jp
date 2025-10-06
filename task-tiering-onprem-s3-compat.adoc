@@ -4,7 +4,7 @@ permalink: task-tiering-onprem-s3-compat.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, s3, tier to s3, minio 
 summary: '非アクティブなデータを、Simple Storage Service (S3) プロトコルを使用する任意の Object Storage サービスに階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。' 
 ---
-= NetApp Cloud Tiering でオンプレミスのONTAPクラスターから S3 オブジェクト ストレージにデータを階層化します。
+= NetApp Cloud TieringでオンプレミスのONTAPクラスターから S3 オブジェクト ストレージにデータを階層化します。
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: '非アクティブなデータを、Simple Storage Service (S3) プロ
 
 
 [role="lead"]
-NetApp Cloud Tiering の非アクティブなデータを、Simple Storage Service (S3) プロトコルを使用する任意のオブジェクト ストレージ サービスに階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。
+NetApp Cloud Tieringの非アクティブなデータを、Simple Storage Service (S3) プロトコルを使用する任意のオブジェクト ストレージ サービスに階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。
 
 現時点では、MinIO オブジェクト ストレージが認定されています。
 
@@ -36,8 +36,8 @@ NetApp は、特に製品の提供元であるサードパーティとサポー�
 次のものが必要です:
 
 [role="quick-margin-list"]
-* NetAppコンソールに追加したONTAP 9.8 以降を実行しているソースのオンプレミスONTAPクラスターと、ユーザー指定のポート経由で宛先の S3 互換オブジェクト ストレージへの接続。 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
-* ONTAPクラスタがバケットにアクセスできるようにするための、オブジェクト ストレージ サーバーの FQDN、アクセス キー、および秘密キー。
+* NetApp Consoleに追加したONTAP 9.8 以降を実行しているソースのオンプレミスONTAPクラスターと、ユーザー指定のポート経由で宛先の S3 互換オブジェクト ストレージへの接続。 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+* ONTAPクラスタがバケットにアクセスできるようにするための、オブジェクト ストレージ サーバーの FQDN、アクセス キー、およびシークレット キー。
 * オンプレミスにインストールされたコンソール エージェント。
 * ソースONTAPクラスター、S3 互換オブジェクト ストレージ、および Cloud Tiering サービスへのアウトバウンド HTTPS 接続を有効にするエージェントのネットワーク。
 
@@ -51,8 +51,8 @@ NetApp は、特に製品の提供元であるサードパーティとサポー�
 Cloud Tiering の料金は、クラウド プロバイダーからの従量課金制サブスクリプション、Cloud Tiering の BYOL (Bring Your Own License)、またはその両方の組み合わせを通じて支払います。
 
 [role="quick-margin-list"]
-* PAYGOオファーに加入するには https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWSマーケットプレイス"^]、 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azureマーケットプレイス"^] 、 または https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCPマーケットプレイス"^]で、「*購読*」を選択し、指示に従います。
-* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetAppコンソールに追加する"^] 。  。
+* PAYGOオファーに加入するには https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS マーケットプレイス"^]、 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azureマーケットプレイス"^] 、 または https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP マーケットプレイス"^]で、「*購読*」を選択し、指示に従います。
+* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetApp Consoleに追加する"^] 。  。
 
 
 
@@ -106,7 +106,7 @@ TIP: Cloud Tiering は、 FlexVolボリュームとFlexGroupボリュームの�
 
 コールド データの階層化を開始する前に、オンプレミスのONTAPシステムをコンソールに追加する必要があります。
 
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^]。
 
 
 
@@ -138,7 +138,7 @@ S3 認証情報:: S3 互換オブジェクト ストレージへの階層化を�
 データをクラウドに階層化するには、コンソール エージェントが必要です。 S3 互換のオブジェクト ストレージにデータを階層化する場合、エージェントがオンプレミスで使用可能である必要があります。新しいエージェントをインストールするか、現在選択されているエージェントがオンプレミスに存在することを確認する必要があります。
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["エージェントについて学ぶ"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["オンプレミスでエージェントをインストールして設定する"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["オンプレミスでエージェントをインストールしてセットアップする"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["エージェントを切り替える"^]
 
 
@@ -152,7 +152,7 @@ S3 認証情報:: S3 互換オブジェクト ストレージへの階層化を�
 . エージェントがインストールされているネットワークで次の接続が有効になっていることを確認します。
 +
 ** ポート443経由のクラウド階層化サービスへのHTTPS接続(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを見る"^]）
-** S3互換オブジェクトストレージへのポート443経由のHTTPS接続
+** ポート443経由のS3互換オブジェクトストレージへのHTTPS接続
 ** ポート443経由のONTAPクラスタ管理LIFへのHTTPS接続
 
 
@@ -165,7 +165,7 @@ S3 認証情報:: S3 互換オブジェクト ストレージへの階層化を�
 環境を準備したら、最初のクラスターから非アクティブなデータの階層化を開始します。
 
 .要件
-* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["NetAppコンソールに追加されたオンプレミスシステム"^] 。
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["NetApp Consoleに追加されたオンプレミスシステム"^]。
 * S3 互換オブジェクト ストレージ サーバーの FQDN と、HTTPS 通信に使用されるポート。
 * 必要な S3 権限を持つアクセス キーとシークレット キー。
 
@@ -195,7 +195,7 @@ image:screenshot_setup_tiering_onprem.png["オンプレミスのONTAPシステ�
 
 
 . [_成功_] ページで [続行] を選択して、ボリュームを今すぐセットアップします。
-. [_Tier Volumes_] ページで、階層化を構成するボリュームを選択し、[*続行*] を選択します。
+. [_Tier Volumes_] ページで、階層化を構成するボリュームを選択し、[続行] を選択します。
 +
 ** すべてのボリュームを選択するには、タイトル行のボックスをチェックします（image:button_backup_all_volumes.png[""] ）をクリックし、「ボリュームの構成」を選択します。
 ** 複数のボリュームを選択するには、各ボリュームのボックスをチェックします（image:button_backup_1_volume.png[""] ）をクリックし、「ボリュームの構成」を選択します。
@@ -207,7 +207,7 @@ image:screenshot_tiering_initial_volumes.png["単一のボリューム、複数�
 
 . [_階層化ポリシー_] ダイアログで、階層化ポリシーを選択し、必要に応じて選択したボリュームの冷却日数を調整して、[適用] を選択します。
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"] 。
+link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"]。
 
 +
 image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化ポリシー設定を示すスクリーンショット。"]
@@ -215,7 +215,7 @@ image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化�
 
 
 .次の手順
-link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"] 。
+link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"]。
 
 クラスター上のアクティブなデータと非アクティブなデータに関する情報を確認できます。link:task-managing-tiering.html["階層設定の管理について詳しくは"] 。
 

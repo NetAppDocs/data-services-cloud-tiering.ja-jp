@@ -11,13 +11,13 @@ settings:
   langs: ja-jp,us-en,de-de,es-es,fr-fr,it-it,pt-br,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: NetAppクラウド階層化ドキュメント
+  - title: NetApp Cloud Tieringドキュメント
     url: "/index.html"
   - title: リリース ノート
     url: "/whats-new.html"
   - title: 始めましょう
     entries:
-    - title: NetAppクラウド階層化について学ぶ
+    - title: NetApp Cloud Tieringについて学ぶ
       url: "/concept-cloud-tiering.html"
     - title: オンプレミスのデータをクラウドに階層化
       entries:
@@ -35,7 +35,7 @@ sidebar:
       url: "/task-licensing-cloud-tiering.html"
     - title: FAQ
       url: "/faq-cloud-tiering.html"
-  - title: NetAppクラウド階層化を使用する
+  - title: NetApp Cloud Tieringを使用する
     entries:
     - title: データ階層化を管理する
       url: "/task-managing-tiering.html"

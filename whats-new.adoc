@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, tiering' 
-summary: NetApp Cloud Tiering の新機能について説明します。 
+summary: NetApp Cloud Tieringの新機能について説明します。 
 ---
 = NetApp Cloud Tieringの新機能
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Cloud Tiering の新機能について説明します。
 
 
 [role="lead"]
-NetApp Cloud Tiering の新機能について説明します。
+NetApp Cloud Tieringの新機能について説明します。
 
 
 
@@ -24,15 +24,15 @@ NetApp Cloud Tiering の新機能について説明します。
 
 === BlueXP tieringはNetApp Cloud Tiering に変更されました
 
-BlueXP tieringはNetApp Cloud Tiering に名前が変更されました。
+BlueXP tieringはNetApp Cloud Tieringに名前が変更されました。
 
 
 
-=== BlueXPはNetAppコンソールになりました
+=== BlueXPはNetApp Consoleになりました
 
-NetAppコンソールは、強化され再構築されたBlueXP基盤上に構築され、オンプレミスとクラウド環境全体にわたるエンタープライズ グレードのNetAppストレージとNetAppデータ サービスの集中管理を提供し、リアルタイムの分析情報、ワークフローの高速化、および高度なセキュリティとコンプライアンスを備えた簡素化された管理を実現します。
+NetApp Consoleは、強化され再構築されたBlueXP基盤上に構築され、オンプレミスとクラウド環境全体にわたるエンタープライズ グレードのNetAppストレージとNetApp Data Servicesの集中管理を提供し、リアルタイムの分析情報、より高速なワークフロー、および高度なセキュリティとコンプライアンスを備えた簡素化された管理を実現します。
 
-変更内容の詳細については、link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetAppコンソールのリリースノート"] 。
+変更内容の詳細については、link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp Consoleのリリースノート"] 。
 
 
 
@@ -76,7 +76,7 @@ Cloud Tiering をアクティブ化すると、 ONTAP は無制限のネット�
 
 === ライセンスタブが削除されました
 
-ライセンス タブは、クラウド階層化インターフェースから削除されました。従量課金制 (PAYGO) サブスクリプションのすべてのライセンスは、現在、Cloud Tiering On-Premises ダッシュボードからアクセスできます。このページにはBlueXP digital walletへのリンクもあり、Cloud Tiering の BYOL (個人所有ライセンス) を表示および管理できます。
+ライセンス タブは、クラウド階層化インターフェースから削除されました。 Pay-as-you-go (PAYGO) サブスクリプションのすべてのライセンスは、現在、Cloud Tiering On-Premises ダッシュボードからアクセスできます。このページにはBlueXP digital walletへのリンクもあり、Cloud Tiering の BYOL (個人所有ライセンス) を表示および管理できます。
 
 
 
@@ -92,7 +92,7 @@ Cloud Tiering をアクティブ化すると、 ONTAP は無制限のネット�
 
 === ボリュームの階層化レポートを生成する
 
-「Tier Volumes」ページからレポートをダウンロードして、管理しているクラスター上のすべてのボリュームの階層化ステータスを確認できます。  BlueXP Tiering は、必要に応じて確認したり社内の他のユーザーに送信したりできる .CSV ファイルを生成します。 https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes["階層化レポートのダウンロード方法をご覧ください"] 。
+「階層ボリューム」ページからレポートをダウンロードして、管理しているクラスター上のすべてのボリュームの階層化ステータスを確認できます。  BlueXP Tiering は、必要に応じて確認したり社内の他のユーザーに送信したりできる .CSV ファイルを生成します。 https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes["階層化レポートのダウンロード方法をご覧ください"] 。
 
 
 
@@ -136,7 +136,7 @@ Azure Blob、Google Cloud Storage、またはStorageGRID の階層化先がキ�
 
 以前のリリースでは、VPC エンドポイントを介してクラスターを S3 バケットに接続するこの安全な方法を提供するのに非常に時間がかかりました。前提条件の手順に従って https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface["VPC エンドポイント インターフェースを使用してシステムをプライベート接続用に設定する"]その後、[ネットワーク] ページの階層化セットアップ ウィザードで PrivateLink を選択できます。
 
-https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html["非アクティブなデータを Amazon S3 に階層化するための要件と手順を確認します。"] 。
+https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html["非アクティブなデータを Amazon S3 に階層化するための要件と手順を確認します。"]。
 
 
 

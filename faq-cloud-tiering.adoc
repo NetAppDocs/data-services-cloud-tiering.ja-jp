@@ -4,7 +4,7 @@ permalink: faq-cloud-tiering.html
 keywords: faq, questions, requirements, service connector, agent, object store, object storage, aws, azure, bucket, cluster, aggregate, s3, storage class, standard, inactive data reporting, auto, volume tiering policy, policy, tiering policy, snapshot, cold, inactive, infrequent, agent, netapp console, console,cloud tier 
 summary: 質問に対する簡単な回答を探している場合は、この FAQ が役立ちます。 
 ---
-= NetAppクラウド階層化に関する技術 FAQ
+= NetApp Cloud Tiering技術 FAQ
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 質問に対する簡単な回答を探している場合は、この F
 
 
 [role="lead"]
-この FAQ は、 NetApp Cloud Tiering に関する質問への簡単な回答を探している場合に役立ちます。
+この FAQ は、NetApp Cloud Tieringに関する質問への簡単な回答を探している場合に役立ちます。
 
 
 
@@ -28,7 +28,7 @@ summary: 質問に対する簡単な回答を探している場合は、この F
 
 クラウド階層化は、急速なデータ増加に伴う課題に対処し、次のようなメリットをもたらします。
 
-* クラウドへのデータセンターの拡張が簡単になり、最大50倍のスペースを提供
+* クラウドへのデータセンターの拡張が容易になり、最大50倍のスペースを提供
 * ストレージの最適化により、平均70%のストレージ節約を実現
 * 総所有コストを平均30%削減
 * アプリケーションをリファクタリングする必要はありません
@@ -100,7 +100,7 @@ FabricPool は、 ONTAP CLI および System Manager を通じて自己管理す
 
 === IDR の実行を開始してから情報が表示されるまでどのくらいの時間がかかりますか?
 
-設定された冷却期間が経過すると、IDR は情報の表示を開始します。  ONTAP 9.7 以前では、IDR の冷却期間は 31 日間で調整できませんでした。  ONTAP 9.8 以降では、IDR 冷却期間を最大 183 日まで設定できます。
+IDR は、設定された冷却期間が経過した後に情報を表示し始めます。  ONTAP 9.7 以前では、IDR の冷却期間は 31 日間で調整できませんでした。  ONTAP 9.8 以降では、IDR 冷却期間を最大 183 日まで設定できます。
 
 
 
@@ -118,7 +118,7 @@ FabricPool は、 ONTAP CLI および System Manager を通じて自己管理す
 * 年間 (BYOL)、期間ベースのサブスクリプションの場合: 1 GB/月あたり 0.033 ドルから。
 
 
-https://bluexp.netapp.com/pricing["価格の詳細を見る"] 。
+https://bluexp.netapp.com/pricing["価格の詳細を見る"]。
 
 コールド データをNetApp StorageGRIDシステム (プライベート クラウド) に階層化する場合、コストはかかりません。
 
@@ -150,7 +150,7 @@ BYOL 容量制限に達した場合、または BYOL ライセンスの有効期
 
 
 
-=== クラウド料金を見積もるにはどうすればいいですか? クラウド階層化には「what if」モードがありますか?
+=== クラウド料金を見積もるにはどうすればいいですか?  Cloud Tiering には「what if」モードがありますか?
 
 クラウド プロバイダーがデータのホスティングに対して請求する料金を見積もる最良の方法は、プロバイダーの計算ツールを使用することです。 https://calculator.aws/#/["AWS"] 、 https://azure.microsoft.com/en-us/pricing/calculator/["Azure"]そして https://cloud.google.com/products/calculator["Google Cloud"]。
 
@@ -162,13 +162,13 @@ BYOL 容量制限に達した場合、または BYOL ライセンスの有効期
 
 === オブジェクト ストレージからオンプレミス ストレージへのデータの読み取り/取得に対して、クラウド プロバイダーから追加料金が発生しますか?
 
-○チェック https://aws.amazon.com/s3/pricing/["Amazon S3 の料金"]、 https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["ブロックブロブの価格"] 、 そして https://cloud.google.com/storage/pricing["クラウドストレージの料金"]データの読み取り/取得に伴って発生する追加料金について。
+○チェック https://aws.amazon.com/s3/pricing/["Amazon S3 の料金"]、 https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["ブロックブロブの価格"] 、 そして https://cloud.google.com/storage/pricing["クラウドストレージの料金"]データの読み取り/取得に伴う追加料金が発生します。
 
 
 
 === クラウド階層化を有効にする前に、ボリュームの節約量を見積もってコールド データ レポートを取得するにはどうすればよいですか?
 
-見積りを取得するには、 ONTAPクラスターをNetAppコンソールに追加し、クラウド階層化クラスター ページから検査します。クラスタの「潜在的な階層化による節約を計算」を選択して起動します。 https://bluexp.netapp.com/cloud-tiering-service-tco["クラウド階層化TCO計算ツール"^]どれだけお金を節約できるか確認しましょう。
+見積りを取得するには、 ONTAPクラスターをNetApp Consoleに追加し、クラウド階層化クラスター ページから検査します。クラスタの「潜在的な階層化による節約を計算」を選択して起動します。 https://bluexp.netapp.com/cloud-tiering-service-tco["クラウド階層化TCO計算ツール"^]どれだけお金を節約できるか確認しましょう。
 
 
 
@@ -210,7 +210,7 @@ Cloud Tiering はONTAPバージョン 9.2 以降をサポートしています�
 
 === Cloud Volumes ONTAPについてはどうですか?
 
-Cloud Volumes ONTAPシステムをお持ちの場合は、Cloud Tiering Clusters ページでそれらを見つけることができるため、ハイブリッド クラウド インフラストラクチャのデータ階層化の全体像を把握できます。ただし、 Cloud Volumes ONTAPシステムは、Cloud Tiering からは読み取り専用です。  Cloud Tiering からCloud Volumes ONTAPにデータ階層化を設定することはできません。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["NetAppコンソールのONTAPシステムからCloud Volumes ONTAPシステムの階層化を設定します。"^] 。
+Cloud Volumes ONTAPシステムをお持ちの場合は、Cloud Tiering Clusters ページでそれらを見つけることができるため、ハイブリッド クラウド インフラストラクチャのデータ階層化の全体像を把握できます。ただし、 Cloud Volumes ONTAPシステムは、Cloud Tiering からは読み取り専用です。  Cloud Tiering からCloud Volumes ONTAPにデータ階層化を設定することはできません。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["NetApp ConsoleのONTAPシステムからCloud Volumes ONTAPシステムの階層化を設定します。"^] 。
 
 
 
@@ -270,7 +270,7 @@ Cloud Tiering は、_Standard_、_Standard-Infrequent Access_、_One Zone-Infreq
 
 === Amazon S3 Glacier Flexible と S3 Glacier Deep Archive が Cloud Tiering でサポートされていないのはなぜですか?
 
-Amazon S3 Glacier Flexible と S3 Glacier Deep Archive がサポートされていない主な理由は、Cloud Tiering が高性能な階層化ソリューションとして設計されているため、データが継続的に利用可能であり、取得のためにすぐにアクセスできる必要があるためです。  S3 Glacier Flexible と S3 Glacier Deep Archive では、データの取得には数分から 48 時間かかります。
+Amazon S3 Glacier Flexible と S3 Glacier Deep Archive がサポートされていない主な理由は、Cloud Tiering が高性能な階層化ソリューションとして設計されているため、データが継続的に利用可能であり、取得のためにすぐにアクセスできる必要があるためです。  S3 Glacier Flexible と S3 Glacier Deep Archive を使用すると、データの取得には数分から 48 時間かかる場合があります。
 
 
 
@@ -356,7 +356,7 @@ ONTAP 9.6 以降では、宛先アグリゲートがソース アグリゲート
 
 === コンソールエージェントとは何ですか?
 
-コンソール エージェントは、クラウド アカウント内またはオンプレミスのコンピューティング インスタンスで実行されるソフトウェアであり、 NetAppコンソールがクラウド リソースを安全に管理できるようにします。  Cloud Tiering サービスを使用するには、エージェントを展開する必要があります。
+コンソール エージェントは、クラウド アカウント内またはオンプレミスのコンピューティング インスタンスで実行されるソフトウェアであり、 NetApp Consoleがクラウド リソースを安全に管理できるようにします。Cloud Tiering サービスを使用するには、エージェントを展開する必要があります。
 
 
 
@@ -402,7 +402,7 @@ ONTAP 9.6 以降では、宛先アグリゲートがソース アグリゲート
 * すべてのユーザー データ (すべて): すべてのデータをコールドとして分類し、ボリューム全体を直ちにオブジェクト ストレージに移動します。
 
 
-link:concept-cloud-tiering.html#volume-tiering-policies["階層化ポリシーの詳細"] 。
+link:concept-cloud-tiering.html#volume-tiering-policies["階層化ポリシーの詳細"]。
 
 
 
@@ -509,13 +509,13 @@ ONTAP はオブジェクト ストレージとの間でデータの読み取り�
 
 === ユーザーが階層化されたデータにアクセスしようとしたときに遅延は発生しますか?
 
-○レイテンシは接続性に依存するため、クラウド層ではローカル層と同じレイテンシを提供できません。オブジェクト ストアのレイテンシとスループットを見積もるために、Cloud Tiering では、オブジェクト ストアが接続された後、階層化がセットアップされる前に使用できるクラウド パフォーマンス テスト ( ONTAPオブジェクト ストア プロファイラーに基づく) が提供されます。
+○レイテンシは接続性に依存するため、クラウド層ではローカル層と同じレイテンシを提供できません。オブジェクト ストアのレイテンシとスループットを見積もるために、Cloud Tiering は、オブジェクト ストアが接続された後、階層化がセットアップされる前に使用できるクラウド パフォーマンス テスト ( ONTAPオブジェクト ストア プロファイラーに基づく) を提供します。
 
 
 
 === データはどのように保護されますか?
 
-AES-256-GCM 暗号化は、パフォーマンス層とクラウド層の両方で維持されます。  TLS 1.2 暗号化は、階層間を移動するデータをネットワーク経由で暗号化し、エージェントとONTAPクラスタおよびオブジェクト ストア間の通信を暗号化するために使用されます。
+AES-256-GCM 暗号化は、パフォーマンス層とクラウド層の両方で維持されます。  TLS 1.2 暗号化は、階層間を移動するデータをネットワーク経由で暗号化するため、およびエージェントとONTAPクラスタおよびオブジェクト ストア間の通信を暗号化するために使用されます。
 
 
 
@@ -527,9 +527,9 @@ AES-256-GCM 暗号化は、パフォーマンス層とクラウド層の両方�
 
 === どのような権限が必要ですか?
 
-* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Amazonの場合、S3バケットを管理するには権限が必要です"] 。
-* Azure の場合、 NetAppコンソールに提供する必要がある権限以外に追加の権限は必要ありません。
-* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Google Cloud では、ストレージ アクセス キーを持つサービス アカウントにストレージ管理者権限が必要です。"] 。
-* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["StorageGRIDの場合、S3権限が必要です"] 。
-* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["S3互換オブジェクトストレージにはS3権限が必要です"] 。
+* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Amazonの場合、S3バケットを管理するには権限が必要です"]。
+* Azure の場合、 NetApp Consoleに提供する必要がある権限以外に追加の権限は必要ありません。
+* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Google Cloud では、ストレージ アクセス キーを持つサービス アカウントにストレージ管理者権限が必要です。"]。
+* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["StorageGRIDの場合、S3権限が必要です"]。
+* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["S3互換オブジェクトストレージにはS3権限が必要です"]。
 

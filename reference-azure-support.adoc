@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-azure-support.html 
 keywords: microsoft azure, azure, hot, access tier, cold, regions, cloud tiering, tier, bluexp 
-summary: NetApp Cloud Tiering は、2 つのアクセス層とほとんどのリージョンをサポートします。 
+summary: NetApp Cloud Tiering は、 2 つのアクセス層とほとんどのリージョンをサポートします。 
 ---
-= NetApp Cloud Tiering でサポートされている Azure Blob アクセス層とリージョン
+= NetApp Cloud Tieringでサポートされている Azure Blob アクセス層とリージョン
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: NetApp Cloud Tiering は、2 つのアクセス層とほとんどのリ
 
 
 [role="lead"]
-NetApp Cloud Tiering は、2 つのアクセス層とほとんどのリージョンをサポートします。
+NetApp Cloud Tiering は、 2 つのアクセス層とほとんどのリージョンをサポートします。
 
 
 
@@ -26,7 +26,7 @@ _Cool_ アクセス層を選択しない場合、データは _Hot_ アクセス
 
 クラウド階層化ライフサイクル ルールを構成する場合は、Azure アカウントでコンテナーを設定するときにライフサイクル ルールを構成しないでください。
 
-https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Azure BLOB アクセス層について学ぶ"^] 。
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Azure BLOB アクセス層について学ぶ"^]。
 
 
 

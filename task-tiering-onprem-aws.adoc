@@ -4,7 +4,7 @@ permalink: task-tiering-onprem-aws.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, aws, amazon, s3 
 summary: 非アクティブなデータを Amazon S3 に階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。 
 ---
-= NetApp Cloud Tiering でオンプレミスのONTAPクラスターから Amazon S3 にデータを階層化
+= NetApp Cloud TieringでオンプレミスのONTAPクラスターから Amazon S3 にデータを階層化
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 非アクティブなデータを Amazon S3 に階層化することで
 
 
 [role="lead"]
-NetApp Cloud Tiering で非アクティブなデータを Amazon S3 に階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。
+NetApp Cloud Tieringで非アクティブなデータを Amazon S3 に階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。
 
 
 
@@ -38,7 +38,7 @@ NetApp Cloud Tiering で非アクティブなデータを Amazon S3 に階層化
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三つ"]オンプレミスのONTAPクラスタを準備する
 [role="quick-margin-para"]
-NetAppコンソールでONTAPクラスターを検出し、クラスターが最小要件を満たしていることを確認し、クラスターが AWS S3 に接続できるようにネットワーク設定をカスタマイズします。
+NetApp ConsoleでONTAPクラスターを検出し、クラスターが最小要件を満たしていることを確認し、クラスターが AWS S3 に接続できるようにネットワーク設定をカスタマイズします。
 
 [role="quick-margin-para"]
 <<ONTAPクラスタを準備する,オンプレミスのONTAPクラスターを準備する方法をご覧ください。>>
@@ -63,7 +63,7 @@ NetAppコンソールでONTAPクラスターを検出し、クラスターが最
 
 [role="quick-margin-list"]
 * AWS Marketplaceからサブスクライブするには、 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["マーケットプレイスオファーにアクセス"^]をクリックし、「*購読*」を選択して、指示に従います。
-* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetAppコンソールに追加する"] 。
+* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetApp Consoleに追加する"] 。
 
 
 
@@ -91,7 +91,7 @@ NOTE: エージェントと S3 間の通信は、オブジェクト ストレー
 
 == コンソールエージェントを準備する
 
-エージェントは、 NetAppコンソールから階層化機能を有効にします。非アクティブなONTAPデータを階層化するにはエージェントが必要です。
+エージェントは、NetApp Consoleから階層化機能を有効にします。非アクティブなONTAPデータを階層化するにはエージェントが必要です。
 
 
 
@@ -178,11 +178,11 @@ IPspace 内のすべてのクラスタ間 LIF はオブジェクト ストアに
 
 
 
-=== NetAppコンソールでONTAPクラスタを検出する
+=== NetApp ConsoleでONTAPクラスタを検出する
 
-コールド データをオブジェクト ストレージに階層化する前に、 NetAppコンソールでオンプレミスのONTAPクラスターを検出する必要があります。クラスターを追加するには、クラスター管理 IP アドレスと管理者ユーザー アカウントのパスワードを知っておく必要があります。
+コールド データをオブジェクト ストレージに階層化する前に、 NetApp ConsoleでオンプレミスのONTAPクラスターを検出する必要があります。クラスターを追加するには、クラスター管理 IP アドレスと管理者ユーザー アカウントのパスワードを知っておく必要があります。
 
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^]。
 
 
 
@@ -190,10 +190,10 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["�
 
 新しいクラスターのデータ階層化を設定すると、サービスで S3 バケットを作成するか、エージェントが設定されている AWS アカウント内の既存の S3 バケットを選択するかを尋ねるメッセージが表示されます。  AWS アカウントには、Cloud Tiering に入力できる権限とアクセスキーが必要です。  ONTAPクラスターはアクセス キーを使用して、S3 との間でデータを階層化します。
 
-デフォルトでは、クラウド階層化によってバケットが自動的に作成されます。独自のバケットを使用する場合は、階層化アクティベーション ウィザードを開始する前にバケットを作成し、ウィザードでそのバケットを選択できます。 https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["NetAppコンソールからS3バケットを作成する方法をご覧ください"^] 。バケットはボリュームの非アクティブなデータを保存するためだけに使用してください。他の目的には使用できません。  S3バケットはlink:reference-aws-support.html#supported-aws-regions["クラウド階層化をサポートするリージョン"]。
+デフォルトでは、クラウド階層化によってバケットが自動的に作成されます。独自のバケットを使用する場合は、階層化アクティベーション ウィザードを開始する前にバケットを作成し、ウィザードでそのバケットを選択できます。 https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["NetApp ConsoleからS3バケットを作成する方法をご覧ください"^] 。バケットはボリュームの非アクティブなデータを保存するためだけに使用してください。他の目的には使用できません。  S3バケットはlink:reference-aws-support.html#supported-aws-regions["クラウド階層化をサポートするリージョン"]。
 
 
-NOTE: 一定の日数後に階層化されたデータが移行される低コストのストレージクラスを使用するように Cloud Tiering を構成する予定の場合は、AWS アカウントでバケットを設定するときにライフサイクルルールを選択しないでください。  Cloud Tiering はライフサイクルの遷移を管理します。
+NOTE: 一定の日数後に階層化されたデータが移行される低コストのストレージ クラスを使用するように Cloud Tiering を構成する予定の場合は、AWS アカウントでバケットを設定するときにライフサイクル ルールを選択しないでください。  Cloud Tiering はライフサイクルの遷移を管理します。
 
 
 
@@ -211,7 +211,7 @@ NOTE: 一定の日数後に階層化されたデータが移行される低コ�
 ** 確認する https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies["これらのS3権限"^]エージェントに権限を付与する IAM ロールの一部です。これらは、エージェントを最初に展開したときにデフォルトで含まれているはずです。そうでない場合は、不足している権限を追加する必要があります。参照 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWSドキュメント: IAMポリシーの編集"^]手順についてはこちらをご覧ください。
 ** Cloud Tiering によって作成されるデフォルトのバケットには、「fabric-pool」というプレフィックスが付きます。バケットに別のプレフィックスを使用する場合は、使用する名前で権限をカスタマイズする必要があります。  S3の権限に次の行が表示されます `"Resource": ["arn:aws:s3:::fabric-pool*"]`。 「fabric-pool」を、使用したいプレフィックスに変更する必要があります。たとえば、バケットのプレフィックスとして「tiering-1」を使用する場合は、この行を次のように変更します。 `"Resource": ["arn:aws:s3:::tiering-1*"]` 。
 +
-同じNetAppコンソール組織内の追加のクラスターに使用するバケットに別のプレフィックスを使用する場合は、他のバケットのプレフィックスを含む別の行を追加できます。例えば：
+同じNetApp Console組織内の追加のクラスターに使用するバケットに別のプレフィックスを使用する場合は、他のバケットのプレフィックスを含む別の行を追加できます。例えば：
 
 +
 `"Resource": ["arn:aws:s3:::tiering-1*"]`
@@ -308,7 +308,7 @@ Please enter Certificate: Press <Enter> when done
 AWS 環境を準備したら、最初のクラスターから非アクティブなデータの階層化を開始します。
 
 .要件
-* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["コンソールで管理されるオンプレミスシステム"^] 。
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["コンソールで管理されるオンプレミスシステム"^]。
 * 必要な S3 権限を持つ IAM ユーザーの AWS アクセスキー。
 
 
@@ -339,7 +339,7 @@ image:screenshot_tiering_aws_s3_bucket.png["S3 バケットへの階層化を設
 
 .. *ストレージ クラス*: クラウド階層化は、階層化されたデータのライフサイクルの遷移を管理します。データは _Standard_ クラスで始まりますが、一定の日数が経過した後にデータに別のストレージ クラスを適用するルールを作成できます。
 +
-階層化されたデータを移行する S3 ストレージ クラスと、そのクラスにデータが割り当てられるまでの日数を選択し、[続行] を選択します。たとえば、以下のスクリーンショットは、階層化データがオブジェクト ストレージで 45 日経過した後に、_Standard_ クラスから _Standard-IA_ クラスに割り当てられていることを示しています。
+階層化されたデータを移行する S3 ストレージ クラスと、そのクラスにデータが割り当てられるまでの日数を選択し、[続行] を選択します。たとえば、以下のスクリーンショットは、オブジェクト ストレージで 45 日経過した後、階層化データが _Standard_ クラスから _Standard-IA_ クラスに割り当てられていることを示しています。
 
 +
 *このストレージ クラスにデータを保持する* を選択した場合、データは _Standard_ ストレージ クラスに残り、ルールは適用されません。link:reference-aws-support.html["サポートされているストレージクラスを参照"^] 。
@@ -378,7 +378,7 @@ image:screenshot_tiering_initial_volumes.png["単一のボリューム、複数�
 
 . [_階層化ポリシー_] ダイアログで、階層化ポリシーを選択し、必要に応じて選択したボリュームの冷却日数を調整して、[適用] を選択します。
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"] 。
+link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"]。
 
 +
 image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化ポリシー設定を示すスクリーンショット。"]
@@ -389,7 +389,7 @@ image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化�
 クラスター上のボリュームから S3 オブジェクト ストレージへのデータ階層化が正常に設定されました。
 
 .次の手順
-link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"] 。
+link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"]。
 
 クラスター上のアクティブなデータと非アクティブなデータに関する情報を確認できます。link:task-managing-tiering.html["階層設定の管理について詳しくは"] 。
 

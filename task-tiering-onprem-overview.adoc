@@ -4,7 +4,7 @@ permalink: task-tiering-onprem-overview.html
 keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
 summary: Cloud Tiering は、オンプレミスの各クラスターからのデータ階層化の集約ビューを提供します。この概要により、環境が明確に把握でき、適切なアクションを取ることができます。 
 ---
-= NetApp Cloud Tiering でクラスタからのデータ階層化の概要を確認します
+= NetApp Cloud Tieringでクラスタからのデータ階層化の概要を確認します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

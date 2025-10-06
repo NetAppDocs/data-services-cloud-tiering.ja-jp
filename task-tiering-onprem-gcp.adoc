@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-tiering-onprem-gcp.html 
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, google, gcp, google cloud storage 
-summary: NetApp Cloud Tiering で非アクティブなデータを Google Cloud Storage に階層化することで、オンプレミスのONTAPクラスタの空き容量を増やすことができます。 
+summary: NetApp Cloud Tieringで非アクティブなデータを Google Cloud Storage に階層化することで、オンプレミスのONTAPクラスタの空き容量を増やすことができます。 
 ---
-= NetApp Cloud Tiering でオンプレミスのONTAPクラスタから Google Cloud Storage にデータを階層化
+= NetApp Cloud TieringでオンプレミスのONTAPクラスタから Google Cloud Storage にデータを階層化
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: NetApp Cloud Tiering で非アクティブなデータを Google Cloud 
 
 
 [role="lead"]
-NetApp Cloud Tiering で非アクティブなデータを Google Cloud Storage に階層化することで、オンプレミスのONTAPクラスタの空き容量を増やします。
+NetApp Cloud Tieringで非アクティブなデータを Google Cloud Storage に階層化することで、オンプレミスのONTAPクラスタの空き容量を増やします。
 
 
 
@@ -27,7 +27,7 @@ NetApp Cloud Tiering で非アクティブなデータを Google Cloud Storage �
 次のものが必要です:
 
 [role="quick-margin-list"]
-* NetAppコンソールに追加したONTAP 9.6 以降を実行しているソースのオンプレミスONTAPクラスタと、ユーザー指定のポート経由での Google Cloud Storage への接続。 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+* NetApp Consoleに追加したONTAP 9.6 以降を実行しているソースのオンプレミスONTAPクラスタと、ユーザー指定のポート経由での Google Cloud Storage への接続。 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
 * 事前定義されたストレージ管理者ロールとストレージ アクセス キーを持つサービス アカウント。
 * Google Cloud Platform VPC にインストールされたコンソール エージェント。
 * データセンター内のONTAPクラスタ、Google Cloud Storage、および Cloud Tiering サービスへの送信 HTTPS 接続を有効にするエージェントのネットワーク。
@@ -35,7 +35,7 @@ NetApp Cloud Tiering で非アクティブなデータを Google Cloud Storage �
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]階層化を設定する
 [role="quick-margin-para"]
-NetAppコンソールで、オンプレミス システムを選択し、階層化サービスに対して [*有効*] を選択して、プロンプトに従ってデータを Google Cloud Storage に階層化します。
+NetApp Consoleで、オンプレミス システムを選択し、階層化サービスに対して [*有効*] を選択して、プロンプトに従ってデータを Google Cloud Storage に階層化します。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三つ"]ライセンスの設定
 [role="quick-margin-para"]
@@ -43,7 +43,7 @@ NetAppコンソールで、オンプレミス システムを選択し、階層�
 
 [role="quick-margin-list"]
 * Google Cloud Marketplaceから登録するには、 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["マーケットプレイスオファーにアクセス"^]をクリックし、「*購読*」を選択して、指示に従います。
-* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetAppコンソールに追加する"^] 。
+* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetApp Consoleに追加する"^] 。
 
 
 
@@ -105,9 +105,9 @@ NOTE: Cloud Tiering はFlexGroupボリュームをサポートします。セッ
 
 === ONTAPクラスタの検出
 
-コールド データの階層化を開始する前に、オンプレミスのONTAPシステムをNetAppコンソールに追加する必要があります。
+コールド データの階層化を開始する前に、オンプレミスのONTAPシステムをNetApp Consoleに追加する必要があります。
 
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^]。
 
 
 
@@ -150,7 +150,7 @@ Cloud Storageバケットは、link:reference-google-support.html#supported-goog
 NOTE: 一定の日数後に階層化されたデータが移行される低コストのストレージ クラスを使用するように Cloud Tiering を構成する予定の場合は、GCP アカウントでバケットを設定するときにライフサイクル ルールを選択しないでください。  Cloud Tiering はライフサイクルの遷移を管理します。
 
 .手順
-. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["定義済みのストレージ管理者ロールを持つサービス アカウントを作成します"^] 。
+. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["定義済みのストレージ管理者ロールを持つサービス アカウントを作成します"^]。
 . へ移動 https://console.cloud.google.com/storage/settings["GCP ストレージ設定"^]サービス アカウントのアクセス キーを作成します。
 +
 .. プロジェクトを選択し、*相互運用性*を選択します。まだ行っていない場合は、[相互運用性アクセスを有効にする] を選択します。
@@ -171,7 +171,7 @@ NOTE: 一定の日数後に階層化されたデータが移行される低コ�
 Google Cloud 環境を準備したら、最初のクラスタから非アクティブなデータの階層化を開始します。
 
 .要件
-* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["NetAppコンソールに追加されたオンプレミスシステム"^] 。
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["NetApp Consoleに追加されたオンプレミスシステム"^]。
 * ストレージ管理者のロールを持つサービス アカウントのストレージ アクセス キー。
 
 
@@ -225,7 +225,7 @@ image:screenshot_tiering_initial_volumes.png["単一のボリューム、複数�
 
 . [_階層化ポリシー_] ダイアログで、階層化ポリシーを選択し、必要に応じて選択したボリュームの冷却日数を調整して、[適用] を選択します。
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"] 。
+link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"]。
 
 +
 image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化ポリシー設定を示すスクリーンショット。"]
@@ -236,7 +236,7 @@ image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化�
 クラスタ上のボリュームから Google Cloud オブジェクト ストレージへのデータ階層化が正常に設定されました。
 
 .次の手順
-link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"] 。
+link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"]。
 
 クラスター上のアクティブなデータと非アクティブなデータに関する情報を確認できます。link:task-managing-tiering.html["階層設定の管理について詳しくは"] 。
 

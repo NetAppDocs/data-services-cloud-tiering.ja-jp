@@ -14,7 +14,7 @@ summary: オンプレミスのONTAPクラスターからのデータ階層化を
 
 
 [role="lead"]
-オンプレミスのONTAPクラスターからのデータ階層化を設定したので、 NetApp Cloud Tiering を使用して、追加のボリュームからデータを階層化したり、ボリュームの階層化ポリシーを変更したり、追加のクラスターを検出したりできるようになります。
+オンプレミスのONTAPクラスターからのデータ階層化を設定したので、 NetApp Cloud Tieringを使用して、追加のボリュームからデータを階層化したり、ボリュームの階層化ポリシーを変更したり、追加のクラスターを検出したりできるようになります。
 
 
 
@@ -71,7 +71,7 @@ image:screenshot_tiering_tier_volumes.png["単一のボリューム、複数の�
 . [_階層化ポリシー_] ダイアログで、階層化ポリシーを選択し、必要に応じて選択したボリュームの冷却日数を調整して、[適用] を選択します。
 . [_階層化ポリシー_] ダイアログで、階層化ポリシーを選択し、必要に応じて選択したボリュームの冷却日数を調整して、[適用] を選択します。
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"] 。
+link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"]。
 
 +
 image:screenshot_tiering_policy_settings.png["構成可能な階層化ポリシー設定を示すスクリーンショット。"]
@@ -94,7 +94,7 @@ ONTAP は、選択したボリュームのデータをクラウドに階層化�
 . ボリュームの行をクリックし、階層化ポリシーを選択し、必要に応じて冷却日数を調整して、[適用] を選択します。
 . ボリュームの行をクリックし、階層化ポリシーを選択し、必要に応じて冷却日数を調整して、[適用] を選択します。
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"] 。
+link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"]。
 
 +
 image:screenshot_tiering_policy_settings.png["構成可能な階層化ポリシー設定を示すスクリーンショット。"]
@@ -218,7 +218,7 @@ image:screenshot_tiering_modify_aggregate.png["階層化の完全性のしきい
 
 == 運用の健全性を改善する
 
-障害が発生した場合、クラウド階層化により、クラスター ダッシュボードに「失敗」の動作正常性ステータスが表示されます。ヘルスは、 ONTAPシステムとNetAppコンソールのステータスを反映します。
+障害が発生した場合、クラウド階層化により、クラスター ダッシュボードに「失敗」の動作正常性ステータスが表示されます。ヘルスは、 ONTAPシステムとNetApp Consoleのステータスを反映します。
 
 .手順
 . 運用状態が「失敗」となっているクラスターを特定します。
@@ -284,5 +284,5 @@ image:screenshot_tiering_search for_cluster.png["いずれかのエージェン�
 +
 Cloud Tiering では、クラスターが見つかった場合、エージェントの名前が表示されます。
 
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["エージェントに切り替えてクラスタの階層化を構成する"^] 。
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["エージェントに切り替えてクラスタの階層化を構成する"^]。
 

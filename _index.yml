@@ -1,13 +1,13 @@
 ---
 indexpage:
-  title: NetAppクラウド階層化ドキュメント
+  title: NetApp Cloud Tieringドキュメント
   summary: NetApp Cloud Tiering は、オンプレミスのONTAPクラスターからオブジェクト ストレージに非アクティブなデータを自動的に階層化することで、データセンターをクラウドに拡張します。
   keywords: bluexp, ontap, cloud tiering, documentation, netapp console, console
   lead: NetApp Cloud Tiering は、オンプレミスのONTAPクラスターからオブジェクト ストレージに非アクティブなデータを自動的に階層化することで、データセンターをクラウドに拡張します。
   tiles:
   - title: 始めましょう
     links:
-    - title: NetAppクラウド階層化について学ぶ
+    - title: NetApp Cloud Tieringについて学ぶ
       url: concept-cloud-tiering.html
     - title: 最新情報
       url: whats-new.html
@@ -51,9 +51,9 @@ indexpage:
       url: task-managing-object-storage.html#removing-a-mirror-object-store-from-an-aggregate
   - title: ブログとコミュニティ
     links:
-    - title: NetAppコンソール
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: NetAppデータサービス
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: NetAppコミュニティ
       url: https://community.netapp.com/

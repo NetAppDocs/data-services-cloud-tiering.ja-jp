@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-licensing-cloud-tiering.html 
 keywords: subscribe, digital wallet, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering, license, cloud tiering, bluexp 
-summary: 最初のクラスターから階層化を設定すると、 NetApp Cloud Tiering の 30 日間の無料トライアルが開始されます。無料トライアルが終了した後は、クラウド プロバイダーのマーケットプレイスからの従量課金制または年間サブスクリプション、 NetAppからの BYOL ライセンス、またはその両方の組み合わせを通じて、Cloud Tiering の料金を支払う必要があります。 
+summary: 最初のクラスターから階層化を設定すると、 NetApp Cloud Tieringの 30 日間の無料トライアルが開始されます。無料トライアルが終了した後は、クラウド プロバイダーのマーケットプレイスからの従量課金制または年間サブスクリプション、 NetAppからの BYOL ライセンス、またはその両方の組み合わせを通じて、Cloud Tiering の料金を支払う必要があります。 
 ---
 = NetApp Cloud Tieringのライセンスを設定する
 :hardbreaks:
@@ -14,16 +14,16 @@ summary: 最初のクラスターから階層化を設定すると、 NetApp Clo
 
 
 [role="lead"]
-最初のクラスターから階層化を設定すると、 NetApp Cloud Tiering の 30 日間の無料トライアルが開始されます。無料トライアルが終了した後は、クラウド プロバイダーのマーケットプレイスからの従量課金制または年間サブスクリプション、 NetAppからの BYOL ライセンス、またはその両方の組み合わせを通じて、Cloud Tiering の料金を支払う必要があります。
+最初のクラスターから階層化を設定すると、 NetApp Cloud Tieringの 30 日間の無料トライアルが開始されます。無料トライアルが終了した後は、クラウド プロバイダーのマーケットプレイスからの従量課金制または年間サブスクリプション、 NetAppからの BYOL ライセンス、またはその両方の組み合わせを通じて、Cloud Tiering の料金を支払う必要があります。
 
 読み進める前にいくつか注意事項があります。
 
-* クラウド プロバイダーのマーケットプレイスですでに Cloud Tiering (PAYGO) にサブスクライブしている場合は、オンプレミスのONTAPシステムの Cloud Tiering にも自動的にサブスクライブされます。アクティブなサブスクリプションは、Cloud Tiering *オンプレミス ダッシュボード* タブに表示されます。再度登録する必要はありません。  NetAppコンソールにアクティブなサブスクリプションが表示されます。
-* BYOL クラウド階層化ライセンス (以前は「クラウド階層化」ライセンスと呼ばれていました) は、 NetAppコンソール組織内の複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。これは、クラスターごとに _FabricPool_ ライセンスを購入していた従来とは異なります (はるかに簡単です)。
+* クラウド プロバイダーのマーケットプレイスですでに Cloud Tiering (PAYGO) にサブスクライブしている場合は、オンプレミスのONTAPシステムの Cloud Tiering にも自動的にサブスクライブされます。アクティブなサブスクリプションは、Cloud Tiering *オンプレミス ダッシュボード* タブに表示されます。再度登録する必要はありません。  NetApp Consoleにアクティブなサブスクリプションが表示されます。
+* BYOL クラウド階層化ライセンス (以前は「クラウド階層化」ライセンスと呼ばれていました) は、 NetApp Console組織内の複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。これは、クラスターごとに _FabricPool_ ライセンスを購入していた従来とは異なります (はるかに簡単です)。
 * StorageGRIDにデータを階層化する場合、料金は発生しません。そのため、BYOL ライセンスも PAYGO 登録も必要ありません。この階層化されたデータは、ライセンスで購入した容量にはカウントされません。
 
 
-link:concept-cloud-tiering.html#pricing-and-licenses["クラウド階層化のライセンスの仕組みについて詳しくは、こちらをご覧ください。"] 。
+link:concept-cloud-tiering.html#pricing-and-licenses["クラウド階層化のライセンスの仕組みについて詳しくは、こちらをご覧ください。"]。
 
 
 
@@ -49,10 +49,10 @@ AWS Marketplace から Cloud Tiering をサブスクライブして、 ONTAPク�
 
 [[subscribe-aws]]
 .手順
-. NetAppコンソールで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
+. NetApp Consoleで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
 . _Marketplace subscriptions_ セクションで、Amazon Web Services の下にある *Subscribe* を選択し、*Continue* を選択します。
 . _Marketplace subscriptions_ セクションで、Amazon Web Services の下にある *Subscribe* を選択し、*Continue* を選択します。
-. 購読するには https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["AWSマーケットプレイス"^]その後、 NetAppコンソールに再度ログインして登録を完了します。
+. 購読するには https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["AWS マーケットプレイス"^]その後、 NetApp Consoleに再度ログインして登録を完了します。
 +
 次のビデオでそのプロセスが示されています。
 
@@ -69,10 +69,10 @@ Azure Marketplace から Cloud Tiering をサブスクライブして、 ONTAP�
 
 [[subscribe-azure]]
 .手順
-. NetAppコンソールで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
+. NetApp Consoleで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
 . _Marketplace サブスクリプション_ セクションで、Microsoft Azure の [サブスクライブ] を選択し、[続行] を選択します。
 . _Marketplace サブスクリプション_ セクションで、Microsoft Azure の [サブスクライブ] を選択し、[続行] を選択します。
-. 購読するには https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azureマーケットプレイス"^]その後、 NetAppコンソールに再度ログインして登録を完了します。
+. 購読するには https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azureマーケットプレイス"^]その後、 NetApp Consoleに再度ログインして登録を完了します。
 +
 次のビデオでそのプロセスが示されています。
 
@@ -89,10 +89,10 @@ Google Cloud Marketplace から Cloud Tiering をサブスクライブして、 
 
 [[subscribe-gcp]]
 .手順
-. NetAppコンソールで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
+. NetApp Consoleで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
 . _Marketplace subscriptions_ セクションで、Google Cloud の下にある *Subscribe* を選択し、*Continue* を選択します。
 . _Marketplace subscriptions_ セクションで、Google Cloud の下にある *Subscribe* を選択し、*Continue* を選択します。
-. 購読するには https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google Cloud マーケットプレイス"^]その後、 NetAppコンソールに再度ログインして登録を完了します。
+. 購読するには https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google Cloud マーケットプレイス"^]その後、 NetApp Consoleに再度ログインして登録を完了します。
 +
 次のビデオでそのプロセスが示されています。
 
@@ -117,7 +117,7 @@ video::373b96de-3691-4d84-b3f3-b05101161638[panopto]
 
 == Cloud Tiering BYOLライセンスを使用する
 
-NetAppの Bring-Your-Own ライセンスには、1 年、2 年、または 3 年の契約期間があります。  BYOL *クラウド ティアリング* ライセンス (以前は「クラウド ティアリング」ライセンスと呼ばれていました) は、 NetAppコンソール組織内の複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。 Cloud Tiering ライセンスで定義された階層化容量の合計は、オンプレミスのクラスター全体で共有されるため、初期ライセンスの取得と更新が容易になります。階層化 BYOL ライセンスの最小容量は 10 TiB から始まります。
+NetAppの Bring-Your-Own ライセンスには、1 年、2 年、または 3 年の契約期間があります。  BYOL *クラウド ティアリング* ライセンス (以前は「クラウド ティアリング」ライセンスと呼ばれていました) は、 NetApp Console組織内の複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。 Cloud Tiering ライセンスで定義された階層化容量の合計は、オンプレミスのクラスター全体で共有されるため、初期ライセンスの取得と更新が容易になります。階層化 BYOL ライセンスの最小容量は 10 TiB から始まります。
 
 Cloud Tiering ライセンスをお持ちでない場合は、弊社にお問い合わせの上、ご購入ください。
 
@@ -133,7 +133,7 @@ Cloud Tiering BYOL ライセンスはコンソールで管理します。新し�
 
 === クラウド階層化BYOLライセンスは2021年に開始されます
 
-新しい *Cloud Tiering* ライセンスは、Cloud Tiering サービスを使用してNetAppコンソール内でサポートされる階層化構成向けに 2021 年 8 月に導入されました。  NetAppコンソールは現在、Amazon S3、Azure Blob ストレージ、Google Cloud Storage、 NetApp StorageGRID、S3 互換オブジェクト ストレージのクラウド ストレージへの階層化をサポートしています。
+新しい *Cloud Tiering* ライセンスは、Cloud Tiering サービスを使用してNetApp Console内でサポートされる階層化構成向けに 2021 年 8 月に導入されました。  NetApp Consoleは現在、Amazon S3、Azure Blob ストレージ、Google Cloud Storage、 NetApp StorageGRID、S3 互換オブジェクト ストレージのクラウド ストレージへの階層化をサポートしています。
 
 オンプレミスのONTAPデータをクラウドに階層化するために過去に使用したことがある * FabricPool * ライセンスは、インターネットにアクセスできないサイト (「ダーク サイト」とも呼ばれます) でのONTAP展開と、IBM Cloud Object Storage への階層化構成のためにのみ保持されます。このタイプの構成を使用する場合は、System Manager またはONTAP CLI を使用して各クラスタにFabricPoolライセンスをインストールします。
 
@@ -156,10 +156,10 @@ TIP: StorageGRIDへの階層化にはFabricPoolまたは Cloud Tiering ライセ
 | これは、複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。 | これはクラスターごとに購入して、すべてのクラスターに対してライセンスを付与するライセンスです。 
 
 
-| NetAppコンソールに登録されます。 | これは、System Manager またはONTAP CLI を使用して個々のクラスタに適用されます。 
+| NetApp Consoleに登録されます。 | これは、System Manager またはONTAP CLI を使用して個々のクラスタに適用されます。 
 
 
-| 階層化の構成と管理は、 NetAppコンソールのクラウド階層化サービスを通じて行われます。 | 階層化の構成と管理は、System Manager またはONTAP CLI を通じて行われます。 
+| 階層化の構成と管理は、NetApp Consoleのクラウド階層化サービスを通じて行われます。 | 階層化の構成と管理は、System Manager またはONTAP CLI を通じて行われます。 
 
 
 | 階層化が設定されると、無料トライアルを使用して 30 日間ライセンスなしで階層化サービスを使用できます。 | 一度設定すると、最初の 10 TB のデータを無料で階層化できます。 
@@ -195,7 +195,7 @@ TIP: StorageGRIDへの階層化にはFabricPoolまたは Cloud Tiering ライセ
 Cloud Tiering で一般的なクラスターを検出すると、Cloud Tiering インターフェースを使用して階層化を構成します。このような場合には、次のアクションが実行されます。
 
 . 「親」クラウド階層化ライセンスは、すべてのクラスターによって階層化に使用されている容量を追跡し、ライセンスに十分な容量があることを確認します。ライセンスされた合計容量と有効期限がコンソールに表示されます。
-. 「親」ライセンスと通信するために、各クラスターに「子」階層化ライセンスが自動的にインストールされます。
+. 「子」階層化ライセンスは、「親」ライセンスと通信するために各クラスターに自動的にインストールされます。
 
 
 

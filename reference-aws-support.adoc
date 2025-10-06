@@ -4,7 +4,7 @@ permalink: reference-aws-support.html
 keywords: aws, amazon, s3, support, regions, storage classes, cloud tiering, tiering, bluexp, netapp 
 summary: NetApp Cloud Tiering は、複数の S3 ストレージ クラスとほとんどのリージョンをサポートしています。 
 ---
-= NetApp Cloud Tiering でサポートされている S3 ストレージ クラスとリージョン
+= NetApp Cloud Tieringでサポートされている S3 ストレージ クラスとリージョン
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -32,7 +32,7 @@ NetApp Cloud Tiering は、複数の S3 ストレージ クラスとほとんど
 
 Cloud Tiering ライフサイクル ルールを構成する場合、AWS アカウントでバケットを設定するときにライフサイクル ルールを構成しないでください。
 
-https://aws.amazon.com/s3/storage-classes/["S3 ストレージクラスについて学ぶ"^] 。
+https://aws.amazon.com/s3/storage-classes/["S3 ストレージクラスについて学ぶ"^]。
 
 
 

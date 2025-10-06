@@ -4,7 +4,7 @@ permalink: reference-google-support.html
 keywords: google, gcp, regions, google regions, gcp regions, storage class, standard, nearline, coldline, archive, cloud tiering, cloud tier, bluexp 
 summary: NetApp Cloud Tiering は、複数の Google Cloud ストレージ クラスとほとんどのリージョンをサポートしています。 
 ---
-= NetApp Cloud Tiering でサポートされている Google Cloud ストレージ クラスとリージョン
+= NetApp Cloud Tieringでサポートされている Google Cloud ストレージ クラスとリージョン
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -31,7 +31,7 @@ NetApp Cloud Tiering は、複数の Google Cloud ストレージ クラスと�
 
 Cloud Tiering ライフサイクル ルールを構成する場合は、Google アカウントでバケットを設定するときにライフサイクル ルールを構成しないでください。
 
-https://cloud.google.com/storage/docs/storage-classes["Google Cloud Storage クラスについて学ぶ"^] 。
+https://cloud.google.com/storage/docs/storage-classes["Google Cloud Storage クラスについて学ぶ"^]。
 
 
 
