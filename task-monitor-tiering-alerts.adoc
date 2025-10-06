@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: task-monitor-tiering-alerts.html 
+keywords: tiering, status, monitor, alert, notification, cloud tiering, bluexp 
+summary: 階層化アラートのステータスは、 NetAppコンソール通知センターで確認できます。 
+---
+= NetApp Cloud Tieringからの階層化アラートのステータスを監視する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetAppコンソール通知センターで、 NetApp Cloud Tiering からの階層化アラートのステータスを表示できます。
+
+通知センターは階層化インシデントの進行状況を追跡し、インシデントが解決されたかどうかを確認できます。  （を選択すると通知が表示されますimage:icon_bell.png["通知ベル"]) をコンソール メニュー バーでクリックします。
+
+現時点では、通知として表示される階層化イベントが 1 つあります。
+
+ストレージスペースを節約するために、クラスター <name> からオブジェクト ストレージに追加のデータを階層化します。
+
+この通知は、システム効率を向上させ、ストレージ コストを削減するための「推奨事項」です。これは、クラスターが階層化しているコールド データが 20% 未満であることを示します (階層化されているデータがまったくないクラスターも含まれます)。リンクを提供します https://bluexp.netapp.com/cloud-tiering-service-tco["クラウド階層化の総所有コストと節約額の計算ツール"^]コスト削減の計算に役立ちます。
+
+NetAppコンソールは、この通知の電子メールを送信しません。
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["通知センターについて詳しくはこちら"^] 。

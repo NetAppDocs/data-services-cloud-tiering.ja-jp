@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: reference-aws-support.html 
+keywords: aws, amazon, s3, support, regions, storage classes, cloud tiering, tiering, bluexp, netapp 
+summary: NetApp Cloud Tiering は、複数の S3 ストレージ クラスとほとんどのリージョンをサポートしています。 
+---
+= NetApp Cloud Tiering でサポートされている S3 ストレージ クラスとリージョン
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering は、複数の S3 ストレージ クラスとほとんどのリージョンをサポートしています。
+
+
+
+== サポートされているS3ストレージクラス
+
+オンプレミスのONTAPシステムから AWS へのデータ階層化を設定すると、Cloud Tiering は非アクティブなデータに対して自動的に _Standard_ ストレージ クラスを使用します。 Cloud Tiering では、ライフサイクル ルールを適用して、一定の日数後にデータが _Standard_ ストレージ クラスから別のストレージ クラスに移行されるようにすることができます。次のストレージ クラスから選択できます。
+
+* 標準-低頻度アクセス (S3 標準-IA)
+* 1 ゾーン - 低頻度アクセス (S3 1 ゾーン - IA)
+* インテリジェント階層化 (S3 インテリジェント階層化)
+* 氷河の即時検索
+
+
+別のストレージ クラスを選択しない場合、データは _Standard_ ストレージ クラスに残り、ルールは適用されません。
+
+Cloud Tiering ライフサイクル ルールを構成する場合、AWS アカウントでバケットを設定するときにライフサイクル ルールを構成しないでください。
+
+https://aws.amazon.com/s3/storage-classes/["S3 ストレージクラスについて学ぶ"^] 。
+
+
+
+== サポートされているAWSリージョン
+
+Cloud Tiering は次の AWS リージョンをサポートしています。
+
+
+
+=== アジア太平洋
+
+* ムンバイ
+* ソウル
+* シンガポール
+* シドニー
+* 東京
+
+
+
+
+=== ヨーロッパ
+
+* フランクフルト
+* アイルランド
+* ロンドン
+* パリ
+* ストックホルム
+
+
+
+
+=== 北米
+
+* カナダ中部
+* 米国東部（バージニア州北部）
+* 米国東部（オハイオ）
+* 米国西部（北カリフォルニア）
+* 米国西部（オレゴン）
+
+
+
+
+=== 南アメリカ
+
+* サンパウロ
+

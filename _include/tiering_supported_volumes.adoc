@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+サポートされているボリュームとアグリゲート:: Cloud Tiering で階層化できるボリュームの合計数は、 ONTAPシステム上のボリューム数よりも少なくなる可能性があります。これは、一部のアグリゲートからボリュームを階層化できないためです。  ONTAPのドキュメントを参照してください。 https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["FabricPoolでサポートされていない機能"^] 。
+

@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: reference-google-support.html 
+keywords: google, gcp, regions, google regions, gcp regions, storage class, standard, nearline, coldline, archive, cloud tiering, cloud tier, bluexp 
+summary: NetApp Cloud Tiering は、複数の Google Cloud ストレージ クラスとほとんどのリージョンをサポートしています。 
+---
+= NetApp Cloud Tiering でサポートされている Google Cloud ストレージ クラスとリージョン
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering は、複数の Google Cloud ストレージ クラスとほとんどのリージョンをサポートしています。
+
+
+
+== サポートされている GCP ストレージ クラス
+
+オンプレミスのONTAPシステムから GCP へのデータ階層化を設定すると、Cloud Tiering は非アクティブなデータに対して自動的に _Standard_ ストレージ クラスを使用します。 Cloud Tiering では、ライフサイクル ルールを適用して、一定の日数後にデータが _Standard_ ストレージ クラスから他のストレージ クラスに移行されるようにすることができます。次のストレージ クラスから選択できます。
+
+* ニアライン
+* コールドライン
+* アーカイブ
+
+
+別のストレージ クラスを選択しない場合、データは _Standard_ ストレージ クラスに残り、ルールは適用されません。
+
+Cloud Tiering ライフサイクル ルールを構成する場合は、Google アカウントでバケットを設定するときにライフサイクル ルールを構成しないでください。
+
+https://cloud.google.com/storage/docs/storage-classes["Google Cloud Storage クラスについて学ぶ"^] 。
+
+
+
+== サポートされている Google Cloud リージョン
+
+Cloud Tiering は次のリージョンをサポートしています。
+
+
+
+=== Americas
+
+* アイオワ
+* ロサンゼルス
+* モントリオール
+* ノースバージニア
+* オレゴン
+* サンパウロ
+* サウスカロライナ州
+
+
+
+
+=== アジア太平洋
+
+* 香港
+* ムンバイ
+* 大阪
+* シンガポール
+* シドニー
+* 台湾
+* 東京
+
+
+
+
+=== ヨーロッパ
+
+* ベルギー
+* フィンランド
+* フランクフルト
+* ロンドン
+* オランダ
+* チューリッヒ
+

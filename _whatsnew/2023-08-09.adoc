@@ -1,0 +1,15 @@
+= バケット名にカスタムプレフィックスを使用する
+:allow-uri-read: 
+
+
+
+
+=== バケット名にカスタムプレフィックスを使用する
+
+以前は、バケット名を定義するときに、デフォルトの「fabric-pool」プレフィックス (例: _fabric-pool-bucket1_) を使用する必要がありました。バケットに名前を付けるときにカスタムプレフィックスを使用できるようになりました。この機能は、データを Amazon S3 に階層化する場合にのみ使用できます。 https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#prepare-your-aws-environment["詳細情報"] 。
+
+
+
+=== すべてのBlueXPコネクタでクラスターを検索
+
+複数のコネクタを使用して環境内のすべてのストレージ システムを管理している場合、階層化を実装する一部のクラスターが異なるコネクタに存在する可能性があります。どのコネクタが特定のクラスターを管理しているかわからない場合は、クラウド階層化を使用してすべてのコネクタを検索できます。 https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#search-for-a-cluster-across-all-bluexp-connectors["詳細情報"] 。

@@ -1,0 +1,59 @@
+---
+indexpage:
+  title: NetAppクラウド階層化ドキュメント
+  summary: NetApp Cloud Tiering は、オンプレミスのONTAPクラスターからオブジェクト ストレージに非アクティブなデータを自動的に階層化することで、データセンターをクラウドに拡張します。
+  keywords: bluexp, ontap, cloud tiering, documentation, netapp console, console
+  lead: NetApp Cloud Tiering は、オンプレミスのONTAPクラスターからオブジェクト ストレージに非アクティブなデータを自動的に階層化することで、データセンターをクラウドに拡張します。
+  tiles:
+  - title: 始めましょう
+    links:
+    - title: NetAppクラウド階層化について学ぶ
+      url: concept-cloud-tiering.html
+    - title: 最新情報
+      url: whats-new.html
+    - title: ライセンスの設定
+      url: task-licensing-cloud-tiering.html
+  - title: オンプレミスのONTAPデータをクラウドに階層化
+    links:
+    - title: Amazon S3への階層化
+      url: task-tiering-onprem-aws.html
+    - title: Azure BLOB への階層
+      url: task-tiering-onprem-azure.html
+    - title: Google Cloudへの階層
+      url: task-tiering-onprem-gcp.html
+    - title: 階層からStorageGRIDへ
+      url: task-tiering-onprem-storagegrid.html
+    - title: 汎用S3への階層
+      url: task-tiering-onprem-s3-compat.html
+  - title: 階層設定を管理する
+    links:
+    - title: ボリュームの階層化ポリシーを変更する
+      url: task-managing-tiering.html#changing-a-volumes-tiering-policy
+    - title: クラスターの階層化情報を確認する
+      url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
+    - title: 追加ボリュームからの階層データ
+      url: task-managing-tiering.html#tiering-data-from-additional-volumes
+    - title: 非アクティブなデータをオブジェクトストレージにアップロードするための帯域幅を変更する
+      url: task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage
+    - title: クラウドからパフォーマンス層にデータを戻す
+      url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
+    - title: アグリゲートの階層設定を管理する
+      url: task-managing-tiering.html#managing-tiering-settings-on-aggregates
+  - title: オブジェクトストレージを管理する
+    links:
+    - title: クラスターに新しいオブジェクトストアを追加する
+      url: task-managing-object-storage.html#adding-a-new-object-store
+    - title: ミラーリングのためにアグリゲートに2番目のオブジェクトストアを追加する
+      url: task-managing-object-storage.html#attaching-a-second-object-store-to-an-aggregate-for-mirroring
+    - title: プライマリオブジェクトストアとミラーオブジェクトストアを交換する
+      url: task-managing-object-storage.html#swapping-the-primary-and-mirror-object-store
+    - title: ミラーオブジェクトストアを削除する
+      url: task-managing-object-storage.html#removing-a-mirror-object-store-from-an-aggregate
+  - title: ブログとコミュニティ
+    links:
+    - title: NetAppコンソール
+      url: https://www.netapp.com/console
+    - title: NetAppデータサービス
+      url: https://www.netapp.com/data-services/
+    - title: NetAppコミュニティ
+      url: https://community.netapp.com/

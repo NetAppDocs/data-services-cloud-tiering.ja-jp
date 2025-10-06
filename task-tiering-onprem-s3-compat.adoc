@@ -1,0 +1,222 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-s3-compat.html 
+keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, s3, tier to s3, minio 
+summary: '非アクティブなデータを、Simple Storage Service (S3) プロトコルを使用する任意の Object Storage サービスに階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。' 
+---
+= NetApp Cloud Tiering でオンプレミスのONTAPクラスターから S3 オブジェクト ストレージにデータを階層化します。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering の非アクティブなデータを、Simple Storage Service (S3) プロトコルを使用する任意のオブジェクト ストレージ サービスに階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。
+
+現時点では、MinIO オブジェクト ストレージが認定されています。
+
+[CAUTION]
+====
+クラウド層として正式にサポートされていないオブジェクト ストアを使用したいお客様は、次の手順で使用できます。顧客は、オブジェクト ストアが要件を満たしていることをテストして確認する必要があります。
+
+NetApp は、特に製品の提供元であるサードパーティとサポート契約を締結していない場合、サードパーティのオブジェクト ストア サービスから生じる問題をサポートせず、また責任を負いません。  NetApp は、関連する損害について一切の責任を負わず、またサードパーティ製品に関するサポートを提供する義務もないことを承認し、同意します。
+
+====
+
+
+== クイック スタート
+
+以下の手順に従ってすぐに開始するか、残りのセクションまでスクロールして詳細を確認してください。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]S3互換オブジェクトストレージにデータを階層化する準備
+[role="quick-margin-para"]
+次のものが必要です:
+
+[role="quick-margin-list"]
+* NetAppコンソールに追加したONTAP 9.8 以降を実行しているソースのオンプレミスONTAPクラスターと、ユーザー指定のポート経由で宛先の S3 互換オブジェクト ストレージへの接続。 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+* ONTAPクラスタがバケットにアクセスできるようにするための、オブジェクト ストレージ サーバーの FQDN、アクセス キー、および秘密キー。
+* オンプレミスにインストールされたコンソール エージェント。
+* ソースONTAPクラスター、S3 互換オブジェクト ストレージ、および Cloud Tiering サービスへのアウトバウンド HTTPS 接続を有効にするエージェントのネットワーク。
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]階層化を設定する
+[role="quick-margin-para"]
+コンソールでオンプレミス システムを選択し、階層化サービスに対して *有効* を選択し、プロンプトに従ってデータを S3 互換オブジェクト ストレージに階層化します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三つ"]ライセンスの設定
+[role="quick-margin-para"]
+Cloud Tiering の料金は、クラウド プロバイダーからの従量課金制サブスクリプション、Cloud Tiering の BYOL (Bring Your Own License)、またはその両方の組み合わせを通じて支払います。
+
+[role="quick-margin-list"]
+* PAYGOオファーに加入するには https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWSマーケットプレイス"^]、 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azureマーケットプレイス"^] 、 または https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCPマーケットプレイス"^]で、「*購読*」を選択し、指示に従います。
+* Cloud Tiering BYOLライセンスを使用して支払うには、mailto:ng-cloud-tiering@netapp.com?subject=Licensing[購入が必要な場合はお問い合わせください]に連絡し、link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetAppコンソールに追加する"^] 。  。
+
+
+
+
+== 要件
+
+ONTAPクラスターのサポートを確認し、ネットワークをセットアップし、オブジェクト ストレージを準備します。
+
+次の図は、各コンポーネントとそれらの間で準備する必要がある接続を示しています。
+
+image:diagram_cloud_tiering_s3_compat.png["オンプレミスのエージェントに接続された Cloud Tiering サービス、 ONTAPクラスターに接続されたエージェント、およびONTAPクラスターとオブジェクト ストレージ間の接続を示すアーキテクチャ イメージ。アクティブ データはONTAPクラスター上に存在し、非アクティブ データはオブジェクト ストレージ上に存在します。"]
+
+
+NOTE: エージェントと S3 互換オブジェクト ストレージ サーバー間の通信は、オブジェクト ストレージのセットアップのみに使用されます。
+
+
+
+=== ONTAPクラスタを準備する
+
+S3 互換オブジェクト ストレージにデータを階層化する場合、ソースONTAPクラスターは次の要件を満たしている必要があります。
+
+サポートされているONTAPプラットフォーム:: AFFシステム、またはすべて SSD のアグリゲートまたはすべて HDD のアグリゲートを持つFASシステムからデータを階層化できます。
+サポートされるONTAPのバージョン:: ONTAP 9.8 以降
+クラスターネットワークの要件::
++
+--
+* ONTAPクラスターは、ユーザー指定のポートを介して S3 互換オブジェクト ストレージへの HTTPS 接続を開始します (ポートは階層化セットアップ中に構成可能です)。
++
+ソースONTAPシステムは、オブジェクト ストレージとの間でデータの読み取りと書き込みを行います。オブジェクト ストレージは開始することはなく、応答するだけです。
+
+* エージェントからの着信接続が必要です。エージェントは社内に常駐している必要があります。
++
+クラスターと Cloud Tiering サービス間の接続は必要ありません。
+
+* 階層化するボリュームをホストする各ONTAPノードには、クラスタ間 LIF が必要です。  LIF は、 ONTAP がオブジェクト ストレージに接続するために使用する _IPspace_ に関連付ける必要があります。
++
+データ階層化を設定すると、Cloud Tiering によって使用する IPspace の入力が求められます。各 LIF が関連付けられている IPspace を選択する必要があります。これは、「デフォルト」の IPspace の場合もあれば、作成したカスタム IPspace の場合もあります。詳細はこちら https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["LIF"^]そして https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspace"^]。
+
+
+
+--
+サポートされているボリュームとアグリゲート:: Cloud Tiering で階層化できるボリュームの合計数は、 ONTAPシステム上のボリューム数よりも少なくなる可能性があります。これは、一部のアグリゲートからボリュームを階層化できないためです。  ONTAPのドキュメントを参照してください。 https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["FabricPoolでサポートされていない機能"^] 。
+
+
+
+TIP: Cloud Tiering は、 FlexVolボリュームとFlexGroupボリュームの両方をサポートします。
+
+
+
+=== ONTAPクラスタの検出
+
+コールド データの階層化を開始する前に、オンプレミスのONTAPシステムをコンソールに追加する必要があります。
+
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスターの検出方法を学ぶ"^] 。
+
+
+
+=== S3互換オブジェクトストレージを準備する
+
+S3 互換オブジェクト ストレージは、次の要件を満たしている必要があります。
+
+S3 認証情報:: S3 互換オブジェクト ストレージへの階層化を設定すると、S3 バケットを作成するか、既存の S3 バケットを選択するように求められます。  Cloud Tiering に S3 アクセス キーとシークレット キーを提供する必要があります。  Cloud Tiering はキーを使用してバケットにアクセスします。
++
+--
+これらのアクセス キーは、次の権限を持つユーザーに関連付ける必要があります。
+
+[source, json]
+----
+"s3:ListAllMyBuckets",
+"s3:ListBucket",
+"s3:GetObject",
+"s3:PutObject",
+"s3:DeleteObject",
+"s3:CreateBucket"
+----
+--
+
+
+
+
+=== エージェントを作成または切り替える
+
+データをクラウドに階層化するには、コンソール エージェントが必要です。 S3 互換のオブジェクト ストレージにデータを階層化する場合、エージェントがオンプレミスで使用可能である必要があります。新しいエージェントをインストールするか、現在選択されているエージェントがオンプレミスに存在することを確認する必要があります。
+
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["エージェントについて学ぶ"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["オンプレミスでエージェントをインストールして設定する"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["エージェントを切り替える"^]
+
+
+
+
+=== コンソールエージェントのネットワークを準備する
+
+エージェントに必要なネットワーク接続があることを確認します。
+
+.手順
+. エージェントがインストールされているネットワークで次の接続が有効になっていることを確認します。
++
+** ポート443経由のクラウド階層化サービスへのHTTPS接続(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを見る"^]）
+** S3互換オブジェクトストレージへのポート443経由のHTTPS接続
+** ポート443経由のONTAPクラスタ管理LIFへのHTTPS接続
+
+
+
+
+
+
+== 最初のクラスターから非アクティブなデータを S3 互換のオブジェクト ストレージに階層化する
+
+環境を準備したら、最初のクラスターから非アクティブなデータの階層化を開始します。
+
+.要件
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["NetAppコンソールに追加されたオンプレミスシステム"^] 。
+* S3 互換オブジェクト ストレージ サーバーの FQDN と、HTTPS 通信に使用されるポート。
+* 必要な S3 権限を持つアクセス キーとシークレット キー。
+
+
+.手順
+. オンプレミスのONTAPシステムを選択します。
+. 右側のパネルから、クラウド階層化サービスの [*有効*] をクリックします。
++
+image:screenshot_setup_tiering_onprem.png["オンプレミスのONTAPシステムを選択した後、画面の右側に表示される階層化オプションを示すスクリーンショット。"]
+
+. *オブジェクト ストレージ名の定義*: このオブジェクト ストレージの名前を入力します。このクラスター上のアグリゲートで使用している他のオブジェクト ストレージとは一意である必要があります。
+. *プロバイダーを選択*: *S3 互換* を選択し、*続行* を選択します。
+. *プロバイダーを選択*: *S3 互換* を選択し、*続行* を選択します。
+. *オブジェクト ストレージの作成* ページの手順を完了します。
++
+.. *サーバー*: S3 互換オブジェクト ストレージ サーバーの FQDN、 ONTAP がサーバーとの HTTPS 通信に使用するポート、および必要な S3 権限を持つアカウントのアクセス キーとシークレット キーを入力します。
+.. *バケット*: 新しいバケットを追加するか、既存のバケットを選択して *続行* を選択します。
+.. *バケット*: 新しいバケットを追加するか、既存のバケットを選択して *続行* を選択します。
+.. *クラスタ ネットワーク*: ONTAP がオブジェクト ストレージに接続するために使用する IPspace を選択し、*続行* を選択します。
+.. *クラスタ ネットワーク*: ONTAP がオブジェクト ストレージに接続するために使用する IPspace を選択し、*続行* を選択します。
++
+正しい IPspace を選択すると、Cloud Tiering がONTAPから S3 互換オブジェクト ストレージへの接続を確立できるようになります。
+
++
+「最大転送速度」を定義することで、非アクティブなデータをオブジェクト ストレージにアップロードするために使用できるネットワーク帯域幅を設定することもできます。  *制限*ラジオ ボタンを選択し、使用できる最大帯域幅を入力するか、*無制限*を選択して制限がないことを示します。
+
+
+
+. [_成功_] ページで [続行] を選択して、ボリュームを今すぐセットアップします。
+. [_Tier Volumes_] ページで、階層化を構成するボリュームを選択し、[*続行*] を選択します。
++
+** すべてのボリュームを選択するには、タイトル行のボックスをチェックします（image:button_backup_all_volumes.png[""] ）をクリックし、「ボリュームの構成」を選択します。
+** 複数のボリュームを選択するには、各ボリュームのボックスをチェックします（image:button_backup_1_volume.png[""] ）をクリックし、「ボリュームの構成」を選択します。
+** 単一のボリュームを選択するには、行（またはimage:screenshot_edit_icon.gif["鉛筆アイコンを編集"]ボリュームの（アイコン）をクリックします。
++
+image:screenshot_tiering_initial_volumes.png["単一のボリューム、複数のボリューム、またはすべてのボリュームを選択する方法と、選択したボリュームを変更するボタンを示すスクリーンショット。"]
+
+
+
+. [_階層化ポリシー_] ダイアログで、階層化ポリシーを選択し、必要に応じて選択したボリュームの冷却日数を調整して、[適用] を選択します。
++
+link:concept-cloud-tiering.html#volume-tiering-policies["ボリューム階層化ポリシーと冷却日の詳細"] 。
+
++
+image:screenshot_tiering_initial_policy_settings.png["構成可能な階層化ポリシー設定を示すスクリーンショット。"]
+
+
+
+.次の手順
+link:task-licensing-cloud-tiering.html["クラウド階層化サービスに必ず加入してください"] 。
+
+クラスター上のアクティブなデータと非アクティブなデータに関する情報を確認できます。link:task-managing-tiering.html["階層設定の管理について詳しくは"] 。
+
+クラスター上の特定のアグリゲートから異なるオブジェクト ストアにデータを階層化する必要がある場合は、追加のオブジェクト ストレージを作成することもできます。または、階層化されたデータが追加のオブジェクト ストアに複製されるFabricPoolミラーリングを使用する予定の場合。link:task-managing-object-storage.html["オブジェクトストアの管理について詳しくは"] 。

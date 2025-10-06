@@ -1,0 +1,68 @@
+---
+settings:
+  name: NetApp Cloud Tiering
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: ja-jp,us-en,de-de,es-es,fr-fr,it-it,pt-br,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: NetAppクラウド階層化ドキュメント
+    url: "/index.html"
+  - title: リリース ノート
+    url: "/whats-new.html"
+  - title: 始めましょう
+    entries:
+    - title: NetAppクラウド階層化について学ぶ
+      url: "/concept-cloud-tiering.html"
+    - title: オンプレミスのデータをクラウドに階層化
+      entries:
+      - title: Amazon S3への階層化
+        url: "/task-tiering-onprem-aws.html"
+      - title: Azure Blob ストレージへの階層化
+        url: "/task-tiering-onprem-azure.html"
+      - title: Google Cloud Storage への階層化
+        url: "/task-tiering-onprem-gcp.html"
+      - title: 階層からStorageGRIDへ
+        url: "/task-tiering-onprem-storagegrid.html"
+      - title: S3 オブジェクトストレージへの階層化
+        url: "/task-tiering-onprem-s3-compat.html"
+    - title: ライセンスの設定
+      url: "/task-licensing-cloud-tiering.html"
+    - title: FAQ
+      url: "/faq-cloud-tiering.html"
+  - title: NetAppクラウド階層化を使用する
+    entries:
+    - title: データ階層化を管理する
+      url: "/task-managing-tiering.html"
+    - title: オブジェクトストレージを管理する
+      url: "/task-managing-object-storage.html"
+    - title: クラウドパフォーマンスのテスト
+      url: "/task-tiering-test.html"
+    - title: すべてのクラスターの階層化の概要を表示する
+      url: "/task-tiering-onprem-overview.html"
+    - title: 階層化アラートのステータスを監視する
+      url: "/task-monitor-tiering-alerts.html"
+  - title: 参照
+    entries:
+    - title: サポートされている Amazon S3 ストレージクラスとリージョン
+      url: "/reference-aws-support.html"
+    - title: サポートされている Azure アクセス層とリージョン
+      url: "/reference-azure-support.html"
+    - title: サポートされている Google Cloud ストレージ クラスとリージョン
+      url: "/reference-google-support.html"
+  - title: 知識とサポート
+    entries:
+    - title: サポートに登録する
+      url: "/task-support-registration.html"
+    - title: ヘルプを受ける
+      url: "/task-get-help.html"
+  - title: 法律上の表示
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

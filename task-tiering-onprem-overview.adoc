@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-overview.html 
+keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
+summary: Cloud Tiering は、オンプレミスの各クラスターからのデータ階層化の集約ビューを提供します。この概要により、環境が明確に把握でき、適切なアクションを取ることができます。 
+---
+= NetApp Cloud Tiering でクラスタからのデータ階層化の概要を確認します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering は、オンプレミスの各クラスターからのデータ階層化の集約ビューを提供します。この概要により、環境が明確に把握でき、適切なアクションを取ることができます。
+
+環境に関する次の詳細を表示するには、*クラウド階層化 > オンプレミス ダッシュボード* を選択します。
+
+image:screenshot_tiering_onprem_dashboard.png["オンプレミス ダッシュボード ページのスクリーンショット。"]
+
+発見されたクラスター:: Cloud Tiering によって検出されたオンプレミス クラスターの数。このグラフには、これらのクラスターの階層化ステータスの概要が示されています。
++
+--
+* 高階層化 - コールドデータの20%以上を階層化しているクラスター
+* 低階層化 - コールドデータの20%未満を階層化しているクラスター
+* 階層化なし - データを階層化していないクラスター
+* 対象外 - データ階層化をサポートしていないクラスター
+
+
+--
+データの概要:: 検出されたすべてのクラスターによって使用されているデータの量。このグラフには、これらのクラスターに階層化されているデータの量が表示されます。
++
+--
+* 階層化データ - クラウドに階層化されるコールドデータの合計
+* コールドデータ - 階層化されていないコールドデータの合計
+* ホットデータ - アクティブに使用されているホットデータの合計
+* 不適格 - クラスターまたはボリュームがデータ階層化をサポートしていないため階層化されていないデータの合計
+
+
+--
+階層化の概要:: 現在階層化されているデータの量と、潜在的に階層化される可能性のあるコールド データの量。
+ポリシー:: 各階層化ポリシーがボリュームに適用された回数。
+マーケットプレイスのサブスクリプション:: 各タイプのマーケットプレイス サブスクリプションに関連付けられているクラスターの数と、サブスクリプションのステータスに関する情報。
+
