@@ -158,10 +158,6 @@ BYOL 容量制限に達した場合、または BYOL ライセンスの有効期
 
 === オブジェクト ストレージからオンプレミス ストレージへのデータの読み取り/取得に対して、クラウド プロバイダーから追加料金が発生しますか?
 
-
-
-=== オブジェクト ストレージからオンプレミス ストレージへのデータの読み取り/取得に対して、クラウド プロバイダーから追加料金が発生しますか?
-
 ○チェック https://aws.amazon.com/s3/pricing/["Amazon S3 の料金"]、 https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["ブロックブロブの価格"] 、 そして https://cloud.google.com/storage/pricing["クラウドストレージの料金"]データの読み取り/取得に伴う追加料金が発生します。
 
 

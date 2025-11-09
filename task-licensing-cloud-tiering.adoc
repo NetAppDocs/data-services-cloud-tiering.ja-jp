@@ -51,7 +51,6 @@ AWS Marketplace から Cloud Tiering をサブスクライブして、 ONTAPク�
 .手順
 . NetApp Consoleで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
 . _Marketplace subscriptions_ セクションで、Amazon Web Services の下にある *Subscribe* を選択し、*Continue* を選択します。
-. _Marketplace subscriptions_ セクションで、Amazon Web Services の下にある *Subscribe* を選択し、*Continue* を選択します。
 . 購読するには https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["AWS マーケットプレイス"^]その後、 NetApp Consoleに再度ログインして登録を完了します。
 +
 次のビデオでそのプロセスが示されています。
@@ -71,7 +70,6 @@ Azure Marketplace から Cloud Tiering をサブスクライブして、 ONTAP�
 .手順
 . NetApp Consoleで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
 . _Marketplace サブスクリプション_ セクションで、Microsoft Azure の [サブスクライブ] を選択し、[続行] を選択します。
-. _Marketplace サブスクリプション_ セクションで、Microsoft Azure の [サブスクライブ] を選択し、[続行] を選択します。
 . 購読するには https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azureマーケットプレイス"^]その後、 NetApp Consoleに再度ログインして登録を完了します。
 +
 次のビデオでそのプロセスが示されています。
@@ -90,7 +88,6 @@ Google Cloud Marketplace から Cloud Tiering をサブスクライブして、 
 [[subscribe-gcp]]
 .手順
 . NetApp Consoleで、*モビリティ > クラウド階層化 > オンプレミス ダッシュボード* を選択します。
-. _Marketplace subscriptions_ セクションで、Google Cloud の下にある *Subscribe* を選択し、*Continue* を選択します。
 . _Marketplace subscriptions_ セクションで、Google Cloud の下にある *Subscribe* を選択し、*Continue* を選択します。
 . 購読するには https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google Cloud マーケットプレイス"^]その後、 NetApp Consoleに再度ログインして登録を完了します。
 +
