@@ -164,7 +164,7 @@ BYOL 容量制限に達した場合、または BYOL ライセンスの有効期
 
 === クラウド階層化を有効にする前に、ボリュームの節約量を見積もってコールド データ レポートを取得するにはどうすればよいですか?
 
-見積りを取得するには、 ONTAPクラスターをNetApp Consoleに追加し、クラウド階層化クラスター ページから検査します。クラスタの「潜在的な階層化による節約を計算」を選択して起動します。 https://bluexp.netapp.com/cloud-tiering-service-tco["クラウド階層化TCO計算ツール"^]どれだけお金を節約できるか確認しましょう。
+見積りを取得するには、 ONTAPクラスターをNetApp Consoleに追加し、クラウド階層化クラスター ページから検査します。クラスタの「潜在的な階層化による節約を計算」を選択して起動します。 https://www.netapp.com/data-services/tiering/tco-calculator["クラウド階層化TCO計算ツール"^]どれだけお金を節約できるか確認しましょう。
 
 
 
@@ -214,7 +214,7 @@ Cloud Volumes ONTAPシステムをお持ちの場合は、Cloud Tiering Clusters
 
 コールドデータをどこに階層化するかによって異なります。詳細については、次のリンクを参照してください。
 
-* link:task-tiering-onprem-aws.html#prepare-your-ontap-cluster["Amazon S3へのデータの階層化"]
+* link:task-tiering-onprem-aws.html#preparing-your-ontap-clusters["Amazon S3へのデータの階層化"]
 * link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters["Azure Blob ストレージへのデータの階層化"]
 * link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters["Google Cloud Storage へのデータの階層化"]
 * link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters["StorageGRIDへのデータの階層化"]

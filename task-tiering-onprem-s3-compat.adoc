@@ -114,6 +114,7 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["�
 
 S3 互換オブジェクト ストレージは、次の要件を満たしている必要があります。
 
+[[preparing-s3-compatible-object-storage]]
 S3 認証情報:: S3 互換オブジェクト ストレージへの階層化を設定すると、S3 バケットを作成するか、既存の S3 バケットを選択するように求められます。  Cloud Tiering に S3 アクセス キーとシークレット キーを提供する必要があります。  Cloud Tiering はキーを使用してバケットにアクセスします。
 +
 --

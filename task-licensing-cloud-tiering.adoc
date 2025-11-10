@@ -183,7 +183,7 @@ TIP: StorageGRIDへの階層化にはFabricPoolまたは Cloud Tiering ライセ
 
 === FabricPoolライセンスを持つ既存のクラスタのプロセス
 
-あなたがlink:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["Cloud Tieringでこれらの特別なクラスタタイプを見つける"]Cloud Tiering はFabricPoolライセンスを認識し、そのライセンスをコンソールに追加します。これらのクラスターは通常どおりデータの階層化を継続します。  FabricPoolライセンスの有効期限が切れると、Cloud Tiering ライセンスを購入する必要があります。
+あなたがlink:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering["Cloud Tieringでこれらの特別なクラスタタイプを見つける"]Cloud Tiering はFabricPoolライセンスを認識し、そのライセンスをコンソールに追加します。これらのクラスターは通常どおりデータの階層化を継続します。FabricPoolライセンスの有効期限が切れると、Cloud Tiering ライセンスを購入する必要があります。
 
 
 
@@ -207,9 +207,9 @@ NOTE: System Manager またはONTAP CLI に表示される「子」ライセン�
 +
 この時点では階層化を構成しないでください。
 
-. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["クラウド階層化ライセンスを購入する"]新しいクラスター (1 つまたは複数) に必要な容量。
+. link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license["クラウド階層化ライセンスを購入する"]新しいクラスター (1 つまたは複数) に必要な容量。
 . コンソール内<<licenses,ライセンスをデジタルウォレットに追加する>>[ライセンスを追加します]。
-. クラウド階層化では、link:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["新しいクラスターを発見する"] 。
+. クラウド階層化では、link:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering["新しいクラスターを発見する"] 。
 . クラスターページから、image:screenshot_horizontal_more_button.gif["その他のアイコン"]クラスターの場合は、[ライセンスのデプロイ] を選択します。
 +
 image:screenshot_tiering_deploy_license.png["階層化ライセンスをONTAPクラスタに展開する方法を示すスクリーンショット。"]

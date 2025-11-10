@@ -123,7 +123,7 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["�
 
 === 必要なエージェント権限があることを確認してください
 
-バージョン 3.9.25 以降を使用してコンソール エージェントを作成した場合、設定は完了です。エージェントが Azure ネットワーク内のリソースとプロセスを管理するために必要なアクセス許可を提供するカスタム ロールが既定で設定されます。参照 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#custom-role-permissions["必要なカスタムロール権限"^]そして https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#cloud-tiering["クラウド階層化に必要な特定の権限"^]。
+バージョン 3.9.25 以降を使用してコンソール エージェントを作成した場合、設定は完了です。エージェントが Azure ネットワーク内のリソースとプロセスを管理するために必要なアクセス許可を提供するカスタム ロールが既定で設定されます。参照 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["必要なカスタムロール権限"^]そして https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html#tiering["クラウド階層化に必要な特定の権限"^]。
 
 以前のバージョンを使用してエージェントを作成した場合は、Azure アカウントのアクセス許可リストを編集して、不足しているアクセス許可を追加する必要があります。
 
