@@ -90,7 +90,6 @@
   <block id="09c7ee4be0db4e9240de27e931212553" category="inline-link-macro">従量課金制サブスクリプションの設定方法を学ぶ</block>
   <block id="421539f25601331f9f5f1e59cdb43e21" category="section-title">年間契約</block>
   <block id="87e8f36409134ebae86e6c9935f8f457" category="paragraph">Cloud Tiering では、非アクティブなデータを Amazon S3 または Azure に階層化する場合、年間契約を提供します。期間は 1 年、2 年、または 3 年からお選びいただけます。</block>
-  <block id="8a2304319d2e68c914c95280f8d1b529" category="paragraph">Google CLoud への階層化では、現在年間契約はサポートされていません。</block>
   <block id="fce5aebaf837d23e27b8a9d6a54a6467" category="section-title">自分のライセンスを持参する</block>
   <block id="ce9d3c4a1b1b4d789b90174349030aaf" category="paragraph">NetAppから *Cloud Tiering* ライセンス (以前は「Cloud Tiering」ライセンスと呼ばれていました) を購入して、独自のライセンスを持ち込みます。  1 年、2 年、または 3 年の期間ライセンスを購入して、任意の階層化容量を指定できます (最小 10 TiB から)。  BYOL Cloud Tiering ライセンスは、複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。  Cloud Tiering ライセンスで定義した階層化容量の合計は、すべてのオンプレミス クラスターで使用できます。</block>
   <block id="7b31eba1fa6d2aa1d3bf4ddb10d4b302" category="inline-link-macro">Cloud Tiering BYOLライセンスの使用方法をご覧ください</block>
@@ -499,112 +498,10 @@
   <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*ケースを表示*: 特定のケースに関する詳細をすべて表示します。</block>
   <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">*ケースノートを更新*: 問題に関する追加の詳細を入力するか、*ファイルのアップロード*を選択して最大 5 つのファイルを添付します。</block>
   <block id="bb6d5d351525342dd6b3cf4d15b6f298" category="list-text">*ケースを閉じる*: ケースを閉じる理由の詳細を入力し、[*ケースを閉じる*] を選択します。</block>
-  <block id="47295dc1d9c97151e1239a3f1c8e00f7" category="summary">最初のクラスターから階層化を設定すると、 NetApp Cloud Tieringの 30 日間の無料トライアルが開始されます。無料トライアルが終了した後は、クラウド プロバイダーのマーケットプレイスからの従量課金制または年間サブスクリプション、 NetAppからの BYOL ライセンス、またはその両方の組み合わせを通じて、Cloud Tiering の料金を支払う必要があります。</block>
   <block id="d4cdf3ad28a947017bac9a28090b4755" category="doc">NetApp Cloud Tieringのライセンスを設定する</block>
-  <block id="80186f1230af2267e2c2e4d2ab8c030e" category="paragraph">読み進める前にいくつか注意事項があります。</block>
-  <block id="62c129e97c5ee80c24e44b10e3b78808" category="list-text">クラウド プロバイダーのマーケットプレイスですでに Cloud Tiering (PAYGO) にサブスクライブしている場合は、オンプレミスのONTAPシステムの Cloud Tiering にも自動的にサブスクライブされます。アクティブなサブスクリプションは、Cloud Tiering *オンプレミス ダッシュボード* タブに表示されます。再度登録する必要はありません。  NetApp Consoleにアクティブなサブスクリプションが表示されます。</block>
-  <block id="d13664b79e47261c681469ef4114071a" category="list-text">BYOL クラウド階層化ライセンス (以前は「クラウド階層化」ライセンスと呼ばれていました) は、 NetApp Console組織内の複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。これは、クラスターごとに _FabricPool_ ライセンスを購入していた従来とは異なります (はるかに簡単です)。</block>
-  <block id="d181cf69cc22712ade6a0c67ca47d824" category="list-text">StorageGRIDにデータを階層化する場合、料金は発生しません。そのため、BYOL ライセンスも PAYGO 登録も必要ありません。この階層化されたデータは、ライセンスで購入した容量にはカウントされません。</block>
-  <block id="d42e6c6c0bd600babc489630de73058f" category="inline-link-macro">クラウド階層化のライセンスの仕組みについて詳しくは、こちらをご覧ください。</block>
-  <block id="6cba13359069adfeb75d96e433421999" category="paragraph"><block ref="4e584f79910f9a3a7129b23d958f91fd" category="inline-link-macro-rx"></block>。</block>
-  <block id="4e06fcbdd87dccfbea49bd9c084521b4" category="paragraph">Cloud Tiering ライセンスをお持ちでない場合は、最初のクラスターに階層化を設定すると、Cloud Tiering の 30 日間の無料トライアルが開始されます。  30 日間の無料トライアルが終了した後は、従量課金制サブスクリプション、年間サブスクリプション、BYOL ライセンス、またはこれらの組み合わせを通じて Cloud Tiering の料金を支払う必要があります。</block>
-  <block id="2c747bf611c932e034372048fa569c80" category="section-title">Cloud Tiering PAYGOサブスクリプションを使用する</block>
-  <block id="bf842c9a2352dda7ee452c6389dda8b8" category="paragraph">クラウド プロバイダーのマーケットプレイスからの従量課金制サブスクリプションを使用すると、Cloud Volumes ONTAPシステムや、Cloud Tiering などの多くのクラウド データ サービスの使用ライセンスを取得できます。</block>
-  <block id="04feed588dafed177e545fb17eb2abf7" category="inline-link-macro">サブスクリプションを表示および管理します。</block>
-  <block id="64f5478313f04f7c5a2169052a948d5d" category="paragraph">Cloud Tiering にサブスクライブすると、コンソールでサブスクリプションを管理できるようになります。<block ref="a6785eaf43e5124756d493e8691d84c1" category="inline-link-macro-rx"></block></block>
-  <block id="a70c9916d691b1eb3e72bf59caa27ce2" category="section-title">AWS マーケットプレイスからのサブスクライブ</block>
-  <block id="df5f272e4f3bf41f36db01caae48f251" category="paragraph">AWS Marketplace から Cloud Tiering をサブスクライブして、 ONTAPクラスターから AWS S3 へのデータ階層化のための従量課金制サブスクリプションを設定します。</block>
-  <block id="dde92a9474b6efeb2d8329883e015807" category="list-text">NetApp Consoleで、*モビリティ &gt; クラウド階層化 &gt; オンプレミス ダッシュボード* を選択します。</block>
-  <block id="d41c784e08f185af1ce1746989cf91d8" category="list-text">_Marketplace subscriptions_ セクションで、Amazon Web Services の下にある *Subscribe* を選択し、*Continue* を選択します。</block>
   <block id="cab27dc53edb571cac663ce2e16450dc" category="inline-link">AWS マーケットプレイス</block>
-  <block id="91dc59a4f1029bfd114c7080d99c6a7f" category="list-text">購読するには<block ref="60fa25c896f0169de9e5a75989c9f27f" category="inline-link-rx"></block>その後、 NetApp Consoleに再度ログインして登録を完了します。</block>
-  <block id="03909f0465e674709c33e446a2657166" category="paragraph">次のビデオでそのプロセスが示されています。</block>
-  <block id="219885055ccb92e461f88b9ecd25570e" category="video-title">AWS Marketplaceからサブスクライブする</block>
-  <block id="8feab303f9a851219461fc3a5bccb103" category="section-title">Azure Marketplace からのサブスクライブ</block>
-  <block id="852bc4eb9abdefdd230a032e3bb1c3f3" category="paragraph">Azure Marketplace から Cloud Tiering をサブスクライブして、 ONTAPクラスターから Azure Blob ストレージへのデータ階層化のための従量課金制サブスクリプションを設定します。</block>
-  <block id="77824143d5448055b1a9e42829dff0fc" category="list-text">_Marketplace サブスクリプション_ セクションで、Microsoft Azure の [サブスクライブ] を選択し、[続行] を選択します。</block>
   <block id="21e74b3c28d006317f38a2bc8eb1da3b" category="inline-link">Azureマーケットプレイス</block>
-  <block id="7c106a7be3a83dd7a651793ee01ca157" category="list-text">購読するには<block ref="41a6e7dc73b2f1e43bd8c26c6ce83782" category="inline-link-rx"></block>その後、 NetApp Consoleに再度ログインして登録を完了します。</block>
-  <block id="0657ebef311800dc99a68ad40de2965a" category="video-title">Azure Marketplace からサブスクライブする</block>
-  <block id="4df3a4b719debe027add38476f2fd8fd" category="section-title">Google Cloud Marketplace からの登録</block>
-  <block id="28843f547e457e1963cacff34902c4c6" category="paragraph">Google Cloud Marketplace から Cloud Tiering をサブスクライブして、 ONTAPクラスタから Google Cloud ストレージへのデータ階層化のための従量課金制サブスクリプションを設定します。</block>
-  <block id="3d45a9bf38b0873906b93acb9347b2af" category="list-text">_Marketplace subscriptions_ セクションで、Google Cloud の下にある *Subscribe* を選択し、*Continue* を選択します。</block>
-  <block id="98ad2c075d2fb10da4cf15c985c3f43f" category="inline-link">Google Cloud マーケットプレイス</block>
-  <block id="a75ad0bcc2a886daf2d9c3cbfa521bc9" category="list-text">購読するには<block ref="82ddec44156571798c68c5bde2400da5" category="inline-link-rx"></block>その後、 NetApp Consoleに再度ログインして登録を完了します。</block>
-  <block id="c9b7d3dfb0a91a99ab5deba597b6741a" category="video-title">Google Cloud Marketplace から登録する</block>
-  <block id="66145e361f72b54aa011f59d543dfb08" category="section-title">年間契約を利用する</block>
-  <block id="d096054edb7faff2ef0d9f1b47311274" category="paragraph">年間契約を購入して、Cloud Tiering の料金を毎年支払います。年間契約は 1 年、2 年、または 3 年の期間でご利用いただけます。</block>
-  <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">AWSマーケットプレイスページ</block>
-  <block id="54b98a81c2ba2da3e9c721b03a4585b5" category="inline-link">サブスクリプションをAWS認証情報に関連付ける</block>
-  <block id="b32259fac98434133e04f9d5edeccc2f" category="paragraph">非アクティブなデータをAWSに階層化する場合、年間契約を申し込むことができます。<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> 。このオプションを使用する場合は、マーケットプレイスページからサブスクリプションを設定し、<block ref="3e7d826ab39799649c48f6e2f8f11222" category="inline-link-rx"></block> 。</block>
-  <block id="bd0202b4a5e368ede75c41822527f8dd" category="inline-link">Azure Marketplace ページ</block>
-  <block id="f201c550f444b5128aeb063bf930d1e2" category="inline-link">サブスクリプションをAzure資格情報に関連付ける</block>
-  <block id="56623ade00abb157c138588791032ca9" category="paragraph">非アクティブなデータをAzureに階層化する場合、年間契約を申し込むことができます。<block ref="d5a65c1c4876b0fa6968c9e08ffea7e8" category="inline-link-rx"></block> 。このオプションを使用する場合は、マーケットプレイスページからサブスクリプションを設定し、<block ref="81924c3896adc46721210987cc1f149c" category="inline-link-rx"></block> 。</block>
   <block id="77d720d97cc99bdd67ce50e58655dc3f" category="paragraph">現在、Google Cloud への階層化では年間契約はサポートされていません。</block>
-  <block id="8b09b5b1748988787957d62eb22076ff" category="section-title">Cloud Tiering BYOLライセンスを使用する</block>
-  <block id="dd5858b636f3787f9dbc860d3add3563" category="paragraph">NetAppの Bring-Your-Own ライセンスには、1 年、2 年、または 3 年の契約期間があります。  BYOL *クラウド ティアリング* ライセンス (以前は「クラウド ティアリング」ライセンスと呼ばれていました) は、 NetApp Console組織内の複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。 Cloud Tiering ライセンスで定義された階層化容量の合計は、オンプレミスのクラスター全体で共有されるため、初期ライセンスの取得と更新が容易になります。階層化 BYOL ライセンスの最小容量は 10 TiB から始まります。</block>
-  <block id="32d21336f5ff01b8e920d65646fad172" category="paragraph">Cloud Tiering ライセンスをお持ちでない場合は、弊社にお問い合わせの上、ご購入ください。</block>
-  <block id="7d7553997a3a5a75a3b0c10d87de471a" category="list-text">NetAppの営業担当者にお問い合わせください</block>
-  <block id="1952ddeca0b71a5d88548a44205f2c9f" category="list-text">NetAppサポートにお問い合わせください。</block>
-  <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link">詳細はこちら</block>
-  <block id="0f199f0273e305ba4201471ea51e0fda" category="paragraph">オプションで、使用しないCloud Volumes ONTAPの未割り当てのノードベースのライセンスがある場合は、それを同じドル相当額と同じ有効期限の Cloud Tiering ライセンスに変換できます。<block ref="f4c32a82791cf9fc58c736c0aed05092" category="inline-link-rx"></block> 。</block>
-  <block id="f0c53f91250600feccf10114405117b1" category="inline-link-macro">ライセンスの管理方法を学びます。</block>
-  <block id="61c1df2a806ec005f5e026cf7e67bcac" category="paragraph">Cloud Tiering BYOL ライセンスはコンソールで管理します。新しいライセンスを追加したり、既存のライセンスを更新したりできます。<block ref="91c9b0ce19e147acb9e693aa326ddc85" category="inline-link-macro-rx"></block></block>
-  <block id="b3419660fa710eee3796f588bd118539" category="section-title">クラウド階層化BYOLライセンスは2021年に開始されます</block>
-  <block id="4ade12024fa0d5b968287596f2637a52" category="paragraph">新しい *Cloud Tiering* ライセンスは、Cloud Tiering サービスを使用してNetApp Console内でサポートされる階層化構成向けに 2021 年 8 月に導入されました。  NetApp Consoleは現在、Amazon S3、Azure Blob ストレージ、Google Cloud Storage、 NetApp StorageGRID、S3 互換オブジェクト ストレージのクラウド ストレージへの階層化をサポートしています。</block>
-  <block id="beecf2fd8c511928c5d65a11860f7c21" category="paragraph">オンプレミスのONTAPデータをクラウドに階層化するために過去に使用したことがある * FabricPool * ライセンスは、インターネットにアクセスできないサイト (「ダーク サイト」とも呼ばれます) でのONTAP展開と、IBM Cloud Object Storage への階層化構成のためにのみ保持されます。このタイプの構成を使用する場合は、System Manager またはONTAP CLI を使用して各クラスタにFabricPoolライセンスをインストールします。</block>
-  <block id="b5a6f9ddeef29501280ea54ee2e1a6a9" category="admonition">StorageGRIDへの階層化にはFabricPoolまたは Cloud Tiering ライセンスは必要ないことに注意してください。</block>
-  <block id="63b75697f87dc9e5a0f1c93ebf6056b5" category="paragraph">現在FabricPoolライセンスを使用している場合は、 FabricPoolライセンスの有効期限または最大容量に達するまで影響を受けません。ライセンスを更新する必要がある場合、またはクラウドへのデータの階層化機能が中断されないように、早めにNetApp にお問い合わせください。</block>
-  <block id="d2aa8768a477bdec7c3c1ce2d54f14c0" category="list-text">コンソールでサポートされている構成を使用している場合、 FabricPoolライセンスは Cloud Tiering ライセンスに変換され、コンソールに表示されます。これらの初期ライセンスの有効期限が切れると、Cloud Tiering ライセンスを更新する必要があります。</block>
-  <block id="bc09c653f410975fa6dd7b35c33b6c6c" category="inline-link">System Managerを使用してライセンス階層化を行う方法をご覧ください</block>
-  <block id="399a2a1becfc475dfe9888938f76ff3c" category="list-text">コンソールでサポートされていない構成を使用している場合は、 FabricPoolライセンスを引き続き使用します。<block ref="f4b8492105dcaca906c2ce90b9ccab9e" category="inline-link-rx"></block> 。</block>
-  <block id="a00fd369198fb13481097340d501bf38" category="paragraph">これら 2 つのライセンスについて知っておくべきことは次のとおりです。</block>
-  <block id="d7050f5be573fbec3d0b437870a3a20d" category="cell">クラウド階層化ライセンス</block>
-  <block id="af6f7538512432a33b6eb5ae90974311" category="cell">FabricPoolライセンス</block>
-  <block id="fea02835528f4e4b182606c16346ded7" category="cell">これは、複数のオンプレミスONTAPクラスターで使用できるフローティング ライセンスです。</block>
-  <block id="7ef7e4f14899acc64a8c7b40a40b0c18" category="cell">これはクラスターごとに購入して、すべてのクラスターに対してライセンスを付与するライセンスです。</block>
-  <block id="0526523bc353ee275b0e2bf1521b5ac9" category="cell">NetApp Consoleに登録されます。</block>
-  <block id="a63ad8d8cc3d36cf738227cc01faa143" category="cell">これは、System Manager またはONTAP CLI を使用して個々のクラスタに適用されます。</block>
-  <block id="0f6d516038c14f2a2526568d93f78db8" category="cell">階層化の構成と管理は、NetApp Consoleのクラウド階層化サービスを通じて行われます。</block>
-  <block id="a7bd9725f68ab51f56b292638f876d9b" category="cell">階層化の構成と管理は、System Manager またはONTAP CLI を通じて行われます。</block>
-  <block id="3eb0bcea83ab734f87536886d1331c74" category="cell">階層化が設定されると、無料トライアルを使用して 30 日間ライセンスなしで階層化サービスを使用できます。</block>
-  <block id="0f54a92e132940776f23febb26ca8ceb" category="cell">一度設定すると、最初の 10 TB のデータを無料で階層化できます。</block>
-  <block id="1a2775c2033d975fe4c3cac33877ff93" category="section-title">クラウド階層化ライセンスの管理</block>
-  <block id="fa007ebe399bde224b26e4cfb30db9bf" category="paragraph">ライセンス期間の有効期限が近づいた場合、またはライセンス容量が制限に達した場合は、コンソールだけでなくクラウド階層化でも通知されます。</block>
-  <block id="ccff941d8f4885bcbcfd3639103bebe7" category="inline-link">ライセンスの管理について学ぶ</block>
-  <block id="0970f6120d94a50520d76c0f63000f6d" category="paragraph">コンソールを使用して、既存のライセンスを更新したり、ライセンスのステータスを表示したり、新しいライセンスを追加したりできます。<block ref="bb882bdc6ec13e200eceea14292fcaf3" category="inline-link-rx"></block> 。</block>
-  <block id="d99641589694e93765fada1790db2a0e" category="section-title">特別な構成のクラスターにクラウド階層化ライセンスを適用する</block>
-  <block id="6b96b48c014b5645274b443e9b351af2" category="paragraph">次の構成のONTAPクラスタは Cloud Tiering ライセンスを使用できますが、ライセンスは、シングルノード クラスタ、HA 構成のクラスタ、Tiering Mirror 構成のクラスタ、およびFabricPool Mirror を使用するMetroCluster構成とは異なる方法で適用する必要があります。</block>
-  <block id="04b39654e6e5a443553195d1e2779190" category="list-text">IBM Cloud Object Storageに階層化されたクラスター</block>
-  <block id="788e22af5bb5495bee686a619fa97145" category="list-text">「ダークサイト」に設置されたクラスター</block>
-  <block id="c8fe0ffee9071759c56b9a7d98bae676" category="section-title">FabricPoolライセンスを持つ既存のクラスタのプロセス</block>
-  <block id="1451b23352470f925dac87a3da139fca" category="inline-link-macro">Cloud Tieringでこれらの特別なクラスタタイプを見つける</block>
-  <block id="eb5050df74a7237bec4864cad6113b55" category="section-title">新しく作成されたクラスターのプロセス</block>
-  <block id="9cf61e4fc9ad253b398c1c3be905176d" category="paragraph">Cloud Tiering で一般的なクラスターを検出すると、Cloud Tiering インターフェースを使用して階層化を構成します。このような場合には、次のアクションが実行されます。</block>
-  <block id="0c61daf569ae994053d87f8ed15c641d" category="list-text">「親」クラウド階層化ライセンスは、すべてのクラスターによって階層化に使用されている容量を追跡し、ライセンスに十分な容量があることを確認します。ライセンスされた合計容量と有効期限がコンソールに表示されます。</block>
-  <block id="7598b57246c073bebfc5a46a79eecdd5" category="list-text">「子」階層化ライセンスは、「親」ライセンスと通信するために各クラスターに自動的にインストールされます。</block>
-  <block id="6a20454f9405b48e4d24bf4c97b565d2" category="admonition">System Manager またはONTAP CLI に表示される「子」ライセンスのライセンス容量と有効期限は実際の情報ではないため、情報が同じでなくても心配する必要はありません。これらの値は、Cloud Tiering ソフトウェアによって内部的に管理されます。実際の情報はコンソールで追跡されます。</block>
-  <block id="5c47f5b94c062cb59e1084e7104a35ad" category="paragraph">上記の 2 つの構成では、System Manager またはONTAP CLI (Cloud Tiering インターフェイスではなく) を使用して階層化を構成する必要があります。したがって、このような場合には、クラウド階層化インターフェースからこれらのクラスターに「子」ライセンスを手動でプッシュする必要があります。</block>
-  <block id="8646b811e05af9f8486c9225ac0c39f3" category="paragraph">階層化ミラー構成では、データが 2 つの異なるオブジェクト ストレージの場所に階層化されるため、両方の場所にデータを階層化するために十分な容量を持つライセンスを購入する必要があります。</block>
-  <block id="f457a5079118a07f91a021318abf923e" category="list-text">System Manager またはONTAP CLI を使用してONTAPクラスタをインストールおよび設定します。</block>
-  <block id="a91bdb81c68f1a37a469fa1d5933a14b" category="paragraph">この時点では階層化を構成しないでください。</block>
-  <block id="a49fb32c3dc821374473edfc6c43950a" category="inline-link-macro">クラウド階層化ライセンスを購入する</block>
-  <block id="475dfcedf495d633f40c9b9bfd57b55a" category="inline-xref">ライセンスをデジタルウォレットに追加する</block>
-  <block id="fead545b6a0a8d6e90228df1c8e35f19" category="list-text">コンソール内<block ref="8856d761fe4c327e372ed95088b45b9a" category="inline-xref-macro-rx"></block>[ライセンスを追加します]。</block>
-  <block id="2ef78cf4a1d7bf5f762483337e16bb3b" category="inline-link-macro">新しいクラスターを発見する</block>
-  <block id="8f0a75d2d5a82f31f2cf069c3b0ee684" category="inline-image-macro">その他のアイコン</block>
-  <block id="8e089abf3b3debe599fb2866aabd4320" category="list-text">クラスターページから、<block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block>クラスターの場合は、[ライセンスのデプロイ] を選択します。</block>
-  <block id="b84ead730259e42d0aaa3247f1351b36" category="inline-image-macro">階層化ライセンスをONTAPクラスタに展開する方法を示すスクリーンショット。</block>
-  <block id="54cfdff2d2e56824adbc46c622ea54b0" category="paragraph"><block ref="54cfdff2d2e56824adbc46c622ea54b0" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c4eff2f1ba49500ec073f2a1087a6a62" category="list-text">[ライセンスの展開] ダイアログで、[展開] を選択します。</block>
-  <block id="9b0c8b391da3036b3219d496d996a102" category="paragraph">子ライセンスはONTAPクラスタに展開されます。</block>
-  <block id="8b0a08ec64fa62214a614acb1efe653a" category="list-text">System Manager またはONTAP CLI に戻り、階層化構成を設定します。</block>
-  <block id="4bd3288276aa6f67f33d76d6902047a2" category="inline-link">FabricPoolミラー構成情報</block>
-  <block id="b197b4bf8520425c8c0b02a971bb8d16" category="paragraph"><block ref="b197b4bf8520425c8c0b02a971bb8d16" category="inline-link-rx"></block></block>
-  <block id="d01fd2b5b65b8c38cd7db8dbebfd0ac6" category="inline-link">FabricPool MetroCluster構成情報</block>
-  <block id="6dfc91892c8d766a3db42ec08d3c133e" category="paragraph"><block ref="6dfc91892c8d766a3db42ec08d3c133e" category="inline-link-rx"></block></block>
-  <block id="653000cdcda1dc1026b9ce4d1c8f33bd" category="inline-link">IBM Cloud Object Storage 情報への階層化</block>
-  <block id="7c14243eb88d8593d5e3377a174647d2" category="paragraph"><block ref="7c14243eb88d8593d5e3377a174647d2" category="inline-link-rx"></block></block>
   <block id="ca9f4f35a593196b4cd509de82138f42" category="summary">オンプレミスのONTAPクラスターを特定のオブジェクト ストレージにデータを階層化するように構成したら、 NetApp Cloud Tieringで追加のオブジェクト ストレージ タスクを実行できます。新しいオブジェクト ストレージを追加したり、階層化されたデータをセカンダリ オブジェクト ストレージにミラーリングしたり、プライマリ オブジェクト ストレージとミラー オブジェクト ストレージを交換したり、ミラー化されたオブジェクト ストアをアグリゲートから削除したりすることができます。</block>
   <block id="9c99b502766cd4588e110c3ba482e7b5" category="doc">NetApp Cloud Tieringでデータ階層化に使用されるオブジェクト ストレージを管理する</block>
   <block id="16f6208ef37c5366aebe53da32612604" category="paragraph">オンプレミスのONTAPクラスターを特定のオブジェクト ストレージにデータを階層化するように構成したら、 NetApp Cloud Tieringを使用して追加のオブジェクト ストレージ タスクを実行できます。新しいオブジェクト ストレージを追加したり、階層化されたデータをセカンダリ オブジェクト ストレージにミラーリングしたり、プライマリ オブジェクト ストレージとミラー オブジェクト ストレージを交換したり、ミラー化されたオブジェクト ストアをアグリゲートから削除したりすることができます。</block>
@@ -826,9 +723,7 @@
   <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">NetAppの新着情報</block>
   <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">NetAppを初めて使用し、NSS アカウントをお持ちでない場合は、以下の手順に従ってください。</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">「サポート」が最初のオプションとしてリストされている「ヘルプ」メニューのスクリーンショット</block>
-  <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">サポート登録ページからアカウント ID シリアル番号を見つけます。</block>
-  <block id="379f9cd57d97013f3f7fdd24f692a0b1" category="paragraph"><block ref="379f9cd57d97013f3f7fdd24f692a0b1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">NetAppのサポート登録サイト</block>
   <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">移動先<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block>*私は登録済みのNetApp顧客ではありません* を選択します。</block>
   <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">必須フィールド（赤いアスタリスクが付いているフィールド）に入力します。</block>
@@ -856,8 +751,6 @@
   <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">既存の顧客レベルの NSS アカウントがあり、パートナー レベルのアカウントを追加しようとする場合も同様です。</block>
   <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">ログインが成功すると、 NetApp はNSS ユーザー名を保存します。</block>
   <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">3つの水平の点のアイコン</block>
-  <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">これは、メールにマッピングされるシステム生成の ID です。*NSS管理*ページでは、<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block>メニュー。</block>
-  <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">ログイン認証トークンを更新する必要がある場合は、<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block>メニュー。</block>
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">このオプションを使用すると、再度ログインするよう求められます。これらのアカウントのトークンは 90 日後に期限切れになることに注意してください。これを知らせる通知が投稿されます。</block>
   <block id="1e815fba6366f359ca04df3ada68a629" category="summary">非アクティブなデータを Amazon S3 に階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。</block>
   <block id="4f14f95613078b00f83b67ec7531e02d" category="doc">NetApp Cloud TieringでオンプレミスのONTAPクラスターから Amazon S3 にデータを階層化</block>
@@ -872,8 +765,6 @@
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">2</block>
   <block id="2c6a3868135c65f9cfa432554e55a593" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>コンソールエージェントを準備する</block>
   <block id="f7fcc7c2f2139e5cb13bfebee90dde37" category="paragraph">コンソールエージェントがすでに AWS VPC またはオンプレミスにデプロイされている場合は、準備は完了です。そうでない場合は、 ONTAPデータを AWS S3 ストレージに階層化するためのエージェントを作成する必要があります。また、エージェントが AWS S3 に接続できるように、エージェントのネットワーク設定をカスタマイズする必要があります。</block>
-  <block id="4c7ba4eb148038d4b94f33fef475e6a1" category="inline-xref">エージェントを作成する方法と必要なネットワーク設定を定義する方法を確認します。</block>
-  <block id="75cc4ddfc5deace371775eae0c1996c5" category="paragraph"><block ref="fa6bb7b5effe2b7ea5e23a734f4acc0b" category="inline-xref-macro-rx"></block></block>
   <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">三つ</block>
   <block id="0ccb6a37cea873b6899d9aa76a81d884" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>オンプレミスのONTAPクラスタを準備する</block>
   <block id="1f617ea578d1dda25a8d1343fc33f208" category="paragraph">NetApp ConsoleでONTAPクラスターを検出し、クラスターが最小要件を満たしていることを確認し、クラスターが AWS S3 に接続できるようにネットワーク設定をカスタマイズします。</block>
@@ -1425,15 +1316,26 @@
   <block id="833f66976dfb40b1fff1906d00d81e43" category="paragraph">オンプレミスのデータセンターから VPC へのインターネット経由のより安全な接続を確立したい場合は、階層化アクティベーションウィザードで AWS PrivateLink 接続を選択するオプションがあります。プライベート IP アドレスを使用する VPC エンドポイント インターフェイスを介してオンプレミス システムに接続するために VPN または AWS Direct Connect を使用する予定の場合は、これが必要です。このタイプの接続は、<block ref="2050915bab4f6759cf373f4985750764" category="inline-xref-macro-rx"></block> 。</block>
   <block id="e264fed64c86a30dfb5ff8b811d8fe4e" category="paragraph">この通知は、システムの効率を高め、ストレージ コストを節約するための「推奨事項」です。リンクを提供します<block ref="42e4a442d762b5369e021e8b363199d3" category="inline-link-rx"></block>コスト削減の計算に役立ちます。</block>
   <block id="6be39c6bfafab590f236e258f50b9b12" category="paragraph"><block ref="1c2f8aa0bfcd23a7f9487ab2cefe0855" category="inline-link-rx"></block>。</block>
-  <block id="4513a79372ed27e3c5ed54e755dd2b0b" category="paragraph">Cloud Tiering ライセンスは、IBM Cloud Object Storage にデータを階層化しているクラスターと共有することもできます。FabricPool構成はSystem ManagerまたはONTAP CLIを使用して設定する必要がありますが、<block ref="ad5a72c96253a511839f7d21241e389f" category="inline-link-macro-rx"></block></block>
-  <block id="02778b04e5a037c1f79623dbe0edaeaa" category="paragraph"><block ref="ec35df1b46bc45bcde27ce05d4c1911f" category="inline-link-macro-rx"></block>。</block>
-  <block id="bc9c7ebd48973adea5231f10a190728f" category="paragraph">Cloud Tiering ライセンスを購入したら、そのライセンスをNetApp Consoleに追加する必要があります。<block ref="14bb9fa35d1b0028e213cd470536d52e" category="inline-link-macro-rx"></block>。</block>
-  <block id="5cc30a9be8f6ac2be14e01b2d4904d11" category="admonition">2021 年 8 月から、古い * FabricPool* ライセンスは * Cloud Tiering * ライセンスに置き換えられました。<block ref="22e02f8ddb60d0feddfbbce882c0c8e2" category="inline-link-macro-rx"></block>。</block>
   <block id="9eef93f992624bd8e7298c05ca77b7fa" category="paragraph">見積りを取得するには、 ONTAPクラスターをNetApp Consoleに追加し、クラウド階層化クラスター ページから検査します。クラスタの「潜在的な階層化による節約を計算」を選択して起動します。<block ref="f9f8011c8d4b0dcc7c11e9eaffe3ab07" category="inline-link-rx"></block>どれだけお金を節約できるか確認しましょう。</block>
   <block id="15a4c60a0f86c99eaac0eebe021afdfe" category="list-text"><block ref="15a4c60a0f86c99eaac0eebe021afdfe" category="inline-link-macro-rx"></block></block>
-  <block id="6c28a4f0eec0b4b8b7a2fd2b16db0bf0" category="paragraph">あなたが<block ref="20b85fbda0982633cbcc10be992f4ea5" category="inline-link-macro-rx"></block>Cloud Tiering はFabricPoolライセンスを認識し、そのライセンスをコンソールに追加します。これらのクラスターは通常どおりデータの階層化を継続します。FabricPoolライセンスの有効期限が切れると、Cloud Tiering ライセンスを購入する必要があります。</block>
-  <block id="1bde59815d02b55060d6e8d13346a689" category="list-text"><block ref="7f252ad1d739a8ecccf6d5db96c80d7b" category="inline-link-macro-rx"></block>新しいクラスター (1 つまたは複数) に必要な容量。</block>
-  <block id="8ba93d5fbdf24a09ecf1780c63d1122d" category="list-text">クラウド階層化では、<block ref="7e9f01463f0c1bdc0791002bcf190788" category="inline-link-macro-rx"></block> 。</block>
   <block id="a3f4872361bc7d041bb3195ac8d2c127" category="paragraph">この通知は、システム効率を向上させ、ストレージ コストを削減するための「推奨事項」です。これは、クラスターが階層化しているコールド データが 20% 未満であることを示します (階層化されているデータがまったくないクラスターも含まれます)。リンクを提供します<block ref="42e4a442d762b5369e021e8b363199d3" category="inline-link-rx"></block>コスト削減の計算に役立ちます。</block>
   <block id="992d77728a30a0b6ec30278644a2aba6" category="paragraph">バージョン 3.9.25 以降を使用してコンソール エージェントを作成した場合、設定は完了です。エージェントが Azure ネットワーク内のリソースとプロセスを管理するために必要なアクセス許可を提供するカスタム ロールが既定で設定されます。参照<block ref="f8b5fc8308ce6fe4ed8cf98ab578e96f" category="inline-link-rx"></block>そして<block ref="e1fd674ce022ebb18ca6d2753458c1ab" category="inline-link-rx"></block>。</block>
+  <block id="bde6bbfbb596382f506558c6bab1343b" category="paragraph">NetApp Cloud Tieringは、2026年4月26日をもって購入またはライセンス更新ができなくなります。</block>
+  <block id="bb94a9ffb3205557387f0b00f8e24dca" category="paragraph">既存のお客様は、サブスクリプションまたはライセンス契約が満了するまで、NetApp Cloud Tieringを引き続き使用し、サポートを受けることができます。サブスクリプションの有効期限が切れると、お客様はNetApp Cloud Tieringの機能またはサポートにアクセスできなくなります。</block>
+  <block id="f8a967869572457212675a5d470c728f" category="inline-link-macro">ONTAP クラスタに FabricPool ライセンスをインストールする</block>
+  <block id="f1a805b989e2fd716c6ed52db78b4c09" category="paragraph">NetAppでは、お客様がNetAppの担当者と協力して、既存の階層化ライセンスをONTAPのFabricPoolライセンスに移行することを推奨しています。このライセンスは、ONTAPでのデータ階層化機能を提供します。FabricPoolを使用してONTAPでデータ階層化を設定する方法の詳細については、<block ref="ecd46e7261f4b06a38f69686168fad8b" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="d5b1e29a38c69118ebb52ddd25078a82" category="inline-link-macro">NetApp Cloud Tiering 提供終了のお知らせ</block>
+  <block id="3c1b98a4347b1e75ca57e51e43e141b2" category="list-text"><block ref="bc9f3746ee1a6c6e91093bc2b9ff13fb" category="inline-link-macro-rx"></block></block>
+  <block id="65afa52dc402fa4f804d1fad742f5b32" category="inline-link-macro">NetApp Cloud Tiering 提供終了 FAQ</block>
+  <block id="91140b6bf054d442adb9178830663a05" category="list-text"><block ref="317d9243bec15035f876da17dbcf900e" category="inline-link-macro-rx"></block></block>
+  <block id="3eaabe1c9f6af35b08c69d2a08c539f7" category="paragraph">Cloud Tieringライセンスは、IBM Cloud Object Storageにデータを階層化しているクラスタと共有することもできます。FabricPool構成は、System ManagerまたはONTAP CLIを使用して設定する必要がありますが、<block ref="df7a2efda45472793208a56bceed9a6a" category="inline-link-macro-rx"></block></block>
+  <block id="d5b396b1c5d337663080cada3fbf93a9" category="paragraph"><block ref="cb03f4cf7a034ce9ccf8e59e75f88132" category="inline-link-macro-rx"></block>。</block>
+  <block id="c9f703238144b3bfd7bc67795b94fec8" category="paragraph">Cloud Tieringライセンスを購入したら、NetApp ConsoleにライセンスをNetApp Consoleに追加する必要があります。<block ref="d5683b1800dc170565d6b8ebe7ed8974" category="inline-link-macro-rx"></block>。</block>
+  <block id="a143d86f6236f76d3322acea76d2434b" category="admonition">2021年8月より、以前の*FabricPool*ライセンスは*Cloud Tiering*ライセンスに置き換えられました。<block ref="5fef56bc71b7561eeca0a8dd2ab51ead" category="inline-link-macro-rx"></block>。</block>
+  <block id="6600665c92651337976c584df2122a6a" category="paragraph">現在Cloud Tieringライセンスをご利用の場合は、Cloud Tieringライセンスの有効期限または最大容量に達するまでは影響を受けません。ライセンスを更新する必要がある場合、またはクラウドへのデータ階層化機能に中断がないことを確認するためにそれ以前に、NetAppにお問い合わせください。</block>
+  <block id="38fc1b337c0ea26463916fc2913205c1" category="paragraph"><block ref="38fc1b337c0ea26463916fc2913205c1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">これはシステムによって生成されたIDで、お客様のメールアドレスにマッピングされます。*NSS管理*ページの<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block>メニューからメールアドレスを表示できます。</block>
+  <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">ログイン資格情報トークンを更新する必要がある場合は、<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> メニューに*資格情報の更新*オプションもあります。</block>
+  <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026年4月13日</block>
 </blocks>
