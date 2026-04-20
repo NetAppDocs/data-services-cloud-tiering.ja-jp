@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-tiering-onprem-aws.html 
-keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, aws, amazon, s3 
+keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, aws, amazon, s3 tiering 
 summary: 非アクティブなデータを Amazon S3 に階層化することで、オンプレミスのONTAPクラスターのスペースを解放します。 
 ---
 = NetApp Cloud TieringでオンプレミスのONTAPクラスターから Amazon S3 にデータを階層化
